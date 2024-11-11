@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Menu, X, Mail, Link2 } from 'lucide-react';
 import { motion } from "framer-motion";
 import GridPattern from '../components/GridPattern';
-import { Marquee } from '../components/Marquee';
 import Link from 'next/link';
+import { Marquee } from '../components/Marquee';
 
 const PortfolioSite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,31 +25,17 @@ const PortfolioSite = () => {
     },
     {
       id: "project-c",
-      title: "Agile Transformation Initiative",
-      description: "Spearheaded company-wide transition to Agile methodology, training 50+ team members",
-      tags: ["Agile", "Change Management", "Training"],
-      image: "/api/placeholder/600/400"
+      title: "London Borough of Islington – Community Research",
+      description: "Led borough's largest community research initiative, redirecting £2M in resources and achieving 40% increase in community engagement",
+      tags: ["Data Analytics", "Python", "Policy", "Research"],
+      image: "/images/islington-research.png"
     },
     {
       id: "project-d",
-      title: "Digital Transformation Strategy",
-      description: "Led end-to-end digital transformation initiative resulting in 45% cost reduction",
-      tags: ["Digital Strategy", "Innovation", "Process Optimization"],
-      image: "/api/placeholder/600/400"
-    },
-    {
-      id: "project-e",
-      title: "Customer Experience Optimization",
-      description: "Enhanced customer experience resulting in 50% improved retention rates",
-      tags: ["CX Design", "Analytics", "Service Design"],
-      image: "/api/placeholder/600/400"
-    },
-    {
-      id: "project-f",
-      title: "Data Analytics Platform",
-      description: "Built enterprise analytics platform driving 40% faster decision-making",
-      tags: ["Data Analytics", "BI", "Automation"],
-      image: "/api/placeholder/600/400"
+      title: "London Borough of Islington – Youth Justice Service",
+      description: "Led compliance overhaul resulting in 'Outstanding' HMIP rating (34/36) - best in London and third-highest nationally",
+      tags: ["Compliance", "Change Management", "Innovation", "Service Design"],
+      image: "/images/islington-youth.png"
     }
   ];
 
@@ -165,7 +151,7 @@ const PortfolioSite = () => {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Project Manager
+                Technical Project Manager
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Passionate about building great products and getting stuff done.
@@ -213,59 +199,46 @@ const PortfolioSite = () => {
                 complex digital products. This includes translation tools, high-volume webscraping, 
                 data processing, data pipeline construction, and API and SDK integrations. I have also led on both 
                 market and user research workstreams, as well as marketing strategies covering SEO, social media, and content marketing.
-                I am currently seeking remote opportunities to continue delivering high-impact projects in the technology sector.
+                I am currently seeking opportunities to continue helping teams deliver high-impact projects in the technology sector. Please see 
+                below for some of my work.
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold text-gray-900 mb-12 text-center"
-            >
-              Featured Projects
-            </motion.h2>
-            <Marquee 
-              className="py-4" 
-              pauseOnHover 
-              reverse={false}
-            >
-              {projects.map((project, index) => (
-                <Link href={`/projects/${project.id}`} key={index}>
-                  <motion.div 
-                    className="w-[350px] mx-4"
-                    whileHover={{ 
-                      scale: 1.02,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                    }}
+        <section id="projects" className="py-20">
+          <div className="max-w-[90vw] mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 px-4">Projects</h2>
+            
+            <Marquee className="py-4" pauseOnHover repeat={2}>
+              {projects.map((project) => (
+                <Link 
+                  href={`/projects/${project.id}`} 
+                  key={project.id}
+                  className="w-[350px] mx-6 flex-shrink-0"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-lg shadow-lg overflow-hidden h-full"
                   >
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-transparent hover:border-sky-500">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="p-6">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-700 mb-4">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span 
-                              key={tagIndex}
-                              className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-40 object-cover"
+                    />
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{project.title}</h3>
+                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+                      <div className="flex flex-wrap gap-1">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 bg-sky-100 text-sky-600 rounded-full text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </motion.div>
