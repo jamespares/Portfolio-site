@@ -4,27 +4,52 @@ import { motion } from "framer-motion";
 import { TypingAnimation } from '../components/TypingAnimation';
 import GridPattern from '../components/GridPattern';
 import { Marquee } from '../components/Marquee';
+import Link from 'next/link';
 
 const PortfolioSite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const projects = [
     {
+      id: "project-a",
       title: "Product Roadmap - Project A",
       description: "Led strategic planning and execution of a 12-month product roadmap, resulting in 40% user growth",
       tags: ["Product Strategy", "Agile", "Stakeholder Management"],
       image: "/api/placeholder/600/400"
     },
     {
+      id: "project-b",
       title: "Project Management Dashboard",
       description: "Designed and implemented a PM dashboard tracking 15 concurrent projects across 3 teams",
       tags: ["Project Tracking", "Team Leadership", "Resource Management"],
       image: "/api/placeholder/600/400"
     },
     {
+      id: "project-c",
       title: "Agile Transformation Initiative",
       description: "Spearheaded company-wide transition to Agile methodology, training 50+ team members",
       tags: ["Agile", "Change Management", "Training"],
+      image: "/api/placeholder/600/400"
+    },
+    {
+      id: "project-d",
+      title: "Digital Transformation Strategy",
+      description: "Led end-to-end digital transformation initiative resulting in 45% cost reduction",
+      tags: ["Digital Strategy", "Innovation", "Process Optimization"],
+      image: "/api/placeholder/600/400"
+    },
+    {
+      id: "project-e",
+      title: "Customer Experience Optimization",
+      description: "Enhanced customer experience resulting in 50% improved retention rates",
+      tags: ["CX Design", "Analytics", "Service Design"],
+      image: "/api/placeholder/600/400"
+    },
+    {
+      id: "project-f",
+      title: "Data Analytics Platform",
+      description: "Built enterprise analytics platform driving 40% faster decision-making",
+      tags: ["Data Analytics", "BI", "Automation"],
       image: "/api/placeholder/600/400"
     }
   ];
@@ -156,9 +181,9 @@ const PortfolioSite = () => {
                 }}
               >
                 <TypingAnimation 
-                  text="My name is James. I'm passionate about delivering exceptional digital products."
+                  text="My name is James. I'm a project manager currently seeking opportunities in the technology sector."
                   duration={20}
-                  className="mt-4 max-w-2xl mx-auto text-2xl text-sky-600 mb-8"
+                  className="mt-4 max-w-2xl mx-auto text-2xl text-gray-800 mb-8"
                 />
               </motion.div>
               <motion.div 
@@ -191,7 +216,7 @@ const PortfolioSite = () => {
                 <TypingAnimation 
                   text="Let's build together."
                   duration={50}
-                  className="mt-8 max-w-2xl mx-auto text-xl text-sky-600"
+                  className="mt-8 max-w-2xl mx-auto text-xl text-gray-800"
                 />
               </motion.div>
             </div>
@@ -218,13 +243,14 @@ const PortfolioSite = () => {
               className="bg-white rounded-lg shadow-md p-6 border-l-4 border-sky-600"
             >
               <p className="text-gray-700 leading-relaxed">
-                I am an early-career product manager with two years of experience managing projects in city government 
+                I am an early-career project manager with two years of experience managing high-impact projects in city government 
                 and one year leading product management at a technology start-up. I have experience and certification
-                in both agile and waterfall methodologies. I have led teams to deliver features on both the front and back end of 
+                in both agile and waterfall methodologies. I am also skilled with web development, software development,
+                data analysis, and data visualization. I have led teams to deliver features on both the front and back end of 
                 complex digital products. This includes translation tools, high-volume webscraping, 
                 data processing, data pipeline construction, and API and SDK integrations. I have also led on both 
                 market and user research workstreams, as well as marketing strategies covering SEO, social media, and content marketing.
-                I am currently seeking remote opportunities to continue delivering exceptional digital products.
+                I am currently seeking remote opportunities to continue delivering high-impact projects in the technology sector.
               </p>
             </motion.div>
           </div>
@@ -248,38 +274,39 @@ const PortfolioSite = () => {
               reverse={false}
             >
               {projects.map((project, index) => (
-                <motion.div 
-                  key={index}
-                  className="w-[350px] mx-4"
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                  }}
-                >
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-transparent hover:border-sky-500">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-700 mb-4">{project.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIndex) => (
-                          <span 
-                            key={tagIndex}
-                            className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                <Link href={`/projects/${project.id}`} key={index}>
+                  <motion.div 
+                    className="w-[350px] mx-4"
+                    whileHover={{ 
+                      scale: 1.02,
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                    }}
+                  >
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden border-2 border-transparent hover:border-sky-500">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-700 mb-4">{project.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span 
+                              key={tagIndex}
+                              className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </Marquee>
           </div>
