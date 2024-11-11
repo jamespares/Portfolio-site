@@ -1,19 +1,28 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/components/prism-typescript';
+import { useEffect } from 'react';
 
 const ProjectB = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   const images = [
+    {
+      src: "/images/roam-lang-dropdown.png",
+      alt: "Language selection dropdown interface",
+      caption: "Custom language selector with region-specific options and flags"
+    },
     {
       src: "/images/roam-translated.png",
       alt: "ROAM website showing translated content in multiple languages",
       caption: "Multi-language support showing seamless content translation across different locales"
     },
-    {
-      src: "/images/roam-dropdown.png",
-      alt: "Language selection dropdown interface",
-      caption: "Custom language selector with region-specific options and flags"
-    }
+   
   ];
 
   return (
@@ -91,6 +100,97 @@ const ProjectB = () => {
                 </ul>
               </li>
             </ul>
+
+            <div className="my-8">
+              <h5 className="text-lg font-semibold mb-4">Translation Automation Script</h5>
+              <pre className="bg-gray-800 text-gray-100 p-6 rounded-lg overflow-x-auto shadow-lg">
+                <code className="language-typescript text-xs font-mono">
+{`// Translation automation script using OpenAI GPT-4
+import OpenAI from 'openai';
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import * as dotenv from 'dotenv';
+import { Translations } from '../app/types/translations';
+import enTranslations from '../app/text-translations/en';
+
+dotenv.config({ path: '.env.local' });
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+
+const languages = {
+  ar: 'Arabic',
+  de: 'German',
+  es: 'Spanish',
+  fr: 'French',
+  he: 'Hebrew',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  pl: 'Polish',
+  pt: 'Portuguese',
+  ru: 'Russian',
+  th: 'Thai',
+  tr: 'Turkish',
+  vi: 'Vietnamese',
+  zh: 'Chinese'
+} as const;
+
+/**
+ * Translates a single text string to the target language using GPT-4
+ */
+async function translateText(text: string, targetLanguage: string) {
+  try {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [{
+        role: "user",
+        content: \`Translate this text to \${targetLanguage}, maintaining the same tone and meaning:\\n\\n\${text}\`
+      }]
+    });
+    return response.choices[0]?.message?.content || text;
+  } catch (error) {
+    console.error(\`Translation error for \${targetLanguage}:\`, error);
+    return text;
+  }
+}
+
+/**
+ * Updates translation file for a specific language
+ */
+async function updateTranslationFile(langCode: string, langName: string) {
+  const filePath = path.join(process.cwd(), 'app', 'text-translations', \`\${langCode}.ts\`);
+  
+  const translations: Translations = JSON.parse(JSON.stringify(enTranslations));
+  
+  if (langCode === 'en') {
+    console.log('Skipping English translations...');
+    return;
+  }
+  
+  console.log(\`Creating fresh translations for \${langName}...\`);
+  
+  // Translate email content
+  for (const key of Object.keys(enTranslations.waitlist.email)) {
+    const source = enTranslations.waitlist.email[key];
+    translations.waitlist.email[key] = await translateText(source, langName);
+  }
+  
+  // Translate main content
+  for (const key of Object.keys(enTranslations.waitlist.content)) {
+    const source = enTranslations.waitlist.content[key];
+    translations.waitlist.content[key] = await translateText(source, langName);
+  }
+
+  await fs.writeFile(filePath, generateTranslationFileContent(translations));
+  console.log(\`✅ \${langName} translations updated\`);
+}`}
+                </code>
+              </pre>
+            </div>
 
             <h3>Optimized for SEO</h3>
             <ul>

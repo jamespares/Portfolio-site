@@ -21,7 +21,7 @@ const PortfolioSite = () => {
       title: "ROAM – Internationalization & SEO",
       description: "Led website internationalization initiative resulting in 50% growth in international traffic and 30% increase in user engagement",
       tags: ["Next.js", "SEO", "Node.js", "i18n"],
-      image: "/images/roam-i18n.png"
+      image: "/images/roam-lang-dropdown.png"
     },
     {
       id: "project-c",
