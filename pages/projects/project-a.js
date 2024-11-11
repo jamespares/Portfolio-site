@@ -3,6 +3,29 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const ProjectA = () => {
+  const images = [
+    {
+      src: "/images/roam-terminal.png",
+      alt: "Terminal output showing the scraping process with Anthropic API integration",
+      caption: "Terminal output showing real-time processing of visa information routes with Anthropic API integration"
+    },
+    {
+      src: "/images/roam-architecture.png",
+      alt: "System architecture diagram showing data pipeline flow",
+      caption: "High-level architecture diagram of the ROAM data processing pipeline"
+    },
+    {
+      src: "/images/roam-dashboard.png",
+      alt: "Data dashboard showing visa information coverage",
+      caption: "Dashboard visualization of visa data coverage across countries"
+    },
+    {
+      src: "/images/roam-performance.png",
+      alt: "Performance metrics graph",
+      caption: "Performance metrics showing improvement in data retrieval speed"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,11 +40,6 @@ const ProjectA = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-bold text-gray-900 mb-8">ROAM – AI-Powered Data Automation and Enhanced Data Accuracy</h1>
-          <img 
-            src="/api/placeholder/1200/600" 
-            alt="ROAM Project"
-            className="w-full h-64 object-cover rounded-lg mb-8"
-          />
           <div className="prose prose-lg max-w-none">
             <h2>Introduction</h2>
             <p>
@@ -34,10 +52,24 @@ const ProjectA = () => {
             <h2>Action</h2>
             
             <h3>Led Development of AI-Powered Web Scraping Tool</h3>
-            <ul>
-              <li>Managed the creation of an AI-powered web scraping tool using Python, leveraging industry-standard libraries such as Scrapy, BeautifulSoup, and Selenium to collect visa-related data from over 195 country websites and government portals.</li>
-              <li>Implemented rigorous data validation processes to ensure only high-confidence data was collected.</li>
-            </ul>
+            <p>
+              Managed the creation of an AI-powered web scraping tool using Python, leveraging industry-standard 
+              libraries such as Scrapy, BeautifulSoup, and Selenium to collect visa-related data from over 195 
+              country websites and government portals.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              {images.map((image, index) => (
+                <div key={index} className="relative">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full rounded-lg shadow-lg"
+                  />
+                  <p className="text-sm text-gray-600 mt-2">{image.caption}</p>
+                </div>
+              ))}
+            </div>
 
             <h3>Utilized Anthropic API for Data Completion</h3>
             <ul>
@@ -48,7 +80,7 @@ const ProjectA = () => {
 
             <h3>Constructed a Fully Automated Data Pipeline</h3>
             <ul>
-              <li>Designed and implemented an ETL pipeline using Apache Airflow for workflow automation, ensuring timely updates and data integrity.</li>
+              <li>Designed and implemented an ETL (Extract, Transform, Load) pipeline using Apache Airflow for workflow automation, ensuring timely updates and data integrity.</li>
               <li>Integrated the pipeline with a PostgreSQL database hosted on Supabase for efficient data storage and retrieval.</li>
               <li>Utilized Pandas and NumPy for data cleaning and transformation tasks, standardizing data formats across sources.</li>
             </ul>
@@ -56,7 +88,7 @@ const ProjectA = () => {
             <h3>Established DevOps Practices</h3>
             <ul>
               <li>Employed Docker for containerization, ensuring consistent development and production environments.</li>
-              <li>Set up CI/CD pipelines using GitHub Actions to automate testing and deployment processes.</li>
+              <li>Set up Continuous Integration/Continuous Deployment (CI/CD) pipelines using GitHub Actions to automate testing and deployment processes.</li>
               <li>Used Git and GitHub for version control and collaborative development, facilitating seamless teamwork among developers.</li>
             </ul>
 
@@ -88,23 +120,7 @@ const ProjectA = () => {
               <li>Deepened expertise in Python programming and web scraping techniques using Scrapy, BeautifulSoup, and Selenium.</li>
               <li>Gained experience in integrating AI APIs, specifically the Anthropic API, for data augmentation and completion.</li>
               <li>Developed skills in data pipeline architecture with Apache Airflow and database management with PostgreSQL and Supabase.</li>
-              <li>Improved data cleaning and analysis capabilities using Pandas and NumPy.</li>
             </ul>
-
-            <h3>AI and Data Confidence Management</h3>
-            <ul>
-              <li>Learned to implement confidence scoring and labeling mechanisms to distinguish between confirmed data and AI-generated estimates.</li>
-              <li>Enhanced understanding of ethical data practices and transparency in AI applications.</li>
-            </ul>
-
-            <h3>DevOps Practices</h3>
-            <ul>
-              <li>Improved knowledge of containerization with Docker and CI/CD pipelines using GitHub Actions.</li>
-              <li>Experienced in version control and collaborative workflows with Git and GitHub.</li>
-            </ul>
-
-            <h3>Team Collaboration</h3>
-            <p>Strengthened collaboration with cross-functional teams, including developers, data scientists, and stakeholders, using communication tools like Slack and project management platforms.</p>
           </div>
         </motion.div>
       </div>

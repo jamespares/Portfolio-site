@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Mail, Link2 } from 'lucide-react';
 import { motion } from "framer-motion";
-import { TypingAnimation } from '../components/TypingAnimation';
 import GridPattern from '../components/GridPattern';
 import { Marquee } from '../components/Marquee';
 import Link from 'next/link';
@@ -12,17 +11,17 @@ const PortfolioSite = () => {
   const projects = [
     {
       id: "project-a",
-      title: "Product Roadmap - Project A",
-      description: "Led strategic planning and execution of a 12-month product roadmap, resulting in 40% user growth",
-      tags: ["Product Strategy", "Agile", "Stakeholder Management"],
-      image: "/api/placeholder/600/400"
+      title: "ROAM – AI-Powered Data Automation",
+      description: "Led development of AI-powered data automation system, improving accuracy by 25% and reducing manual work by 85%",
+      tags: ["Python", "AI/ML", "Data Pipeline", "DevOps"],
+      image: "/images/roam-architecture.png"
     },
     {
       id: "project-b",
-      title: "Project Management Dashboard",
-      description: "Designed and implemented a PM dashboard tracking 15 concurrent projects across 3 teams",
-      tags: ["Project Tracking", "Team Leadership", "Resource Management"],
-      image: "/api/placeholder/600/400"
+      title: "ROAM – Internationalization & SEO",
+      description: "Led website internationalization initiative resulting in 50% growth in international traffic and 30% increase in user engagement",
+      tags: ["Next.js", "SEO", "Node.js", "i18n"],
+      image: "/images/roam-i18n.png"
     },
     {
       id: "project-c",
@@ -156,70 +155,34 @@ const PortfolioSite = () => {
       {/* Add padding to the top of the page to account for fixed header */}
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] bg-white">
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
           <GridPattern />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div className="text-center">
-              <motion.h1 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6,
-                  ease: [0.22, 1, 0.36, 1]
-                }}
-                className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl mb-4"
-              >
-                Hello!
-              </motion.h1>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Project Manager
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Passionate about building great products and getting stuff done.
+              </p>
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ 
-                  duration: 0.3,
-                  delay: 0.3,
-                  ease: "easeOut"
-                }}
-              >
-                <TypingAnimation 
-                  text="My name is James. I'm a project manager currently seeking opportunities in the technology sector."
-                  duration={20}
-                  className="mt-4 max-w-2xl mx-auto text-2xl text-gray-800 mb-8"
-                />
-              </motion.div>
-              <motion.div 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5,
-                  delay: 1.5,
-                  ease: [0.34, 1.56, 0.64, 1]
-                }}
-                className="mt-8 flex justify-center"
+                transition={{ duration: 0.5 }}
+                className="mt-8"
               >
-                <motion.img
-                  src="/profile-photo.png"
-                  alt="Profile"
-                  className="rounded-full w-48 h-48 object-cover border-4 border-gray-800"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                <img
+                  src="/images/profile.png"
+                  alt="James Pares"
+                  className="w-40 h-40 rounded-full mx-auto shadow-lg border-4 border-white"
                 />
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ 
-                  duration: 0.3,
-                  delay: 3.5,
-                  ease: "easeOut"
-                }}
-              >
-                <TypingAnimation 
-                  text="Let's build together."
-                  duration={50}
-                  className="mt-8 max-w-2xl mx-auto text-xl text-gray-800"
-                />
-              </motion.div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
