@@ -3,6 +3,19 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const ProjectB = () => {
+  const images = [
+    {
+      src: "/images/roam-translated.png",
+      alt: "ROAM website showing translated content in multiple languages",
+      caption: "Multi-language support showing seamless content translation across different locales"
+    },
+    {
+      src: "/images/roam-dropdown.png",
+      alt: "Language selection dropdown interface",
+      caption: "Custom language selector with region-specific options and flags"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,6 +43,19 @@ const ProjectB = () => {
             
             <h3>Evaluated Translation Approaches</h3>
             
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              {images.map((image, index) => (
+                <div key={index} className="relative">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full rounded-lg shadow-lg"
+                  />
+                  <p className="text-sm text-gray-600 mt-2">{image.caption}</p>
+                </div>
+              ))}
+            </div>
+
             <h4>API-Based Translation</h4>
             <ul>
               <li>Considered using translation APIs (e.g., Google Translate API) for on-the-fly translations.</li>
