@@ -7,7 +7,7 @@ const ProjectC = () => {
     {
       src: "/images/community-survey.png",
       alt: "Community members participating in the survey",
-      caption: "Residents engaging with the community survey at a local event."
+      caption: "Engaging with residents completing the survey at a local event."
     },
     {
       src: "/images/islington-gantt.png",
@@ -19,7 +19,7 @@ const ProjectC = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/#projects" className="inline-flex items-center text-gray-600 hover:text-sky-600 mb-8">
+        <Link href="/#projects" className="inline-flex items-centre text-gray-600 hover:text-sky-600 mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Projects
         </Link>
@@ -51,10 +51,10 @@ const ProjectC = () => {
           <div className="prose prose-lg max-w-none">
             <h2>Introduction</h2>
             <p>
-              At the London Borough of Islington, the local government recognized a pressing need to better understand
-              the diverse needs, concerns, and priorities of its residents. Existing data was outdated and insufficient
-              for informed policy-making and effective allocation of resources. To address this gap, we initiated a
-              comprehensive community research project to gather actionable insights, improve public services, and
+              During my time at the London Borough of Islington, I recognised a pressing need to better understand
+              the diverse needs, concerns, and priorities of our residents. The existing data was outdated and insufficient
+              for informed policy-making and effective allocation of resources. Determined to bridge this gap, I initiated
+              a comprehensive community research project to gather actionable insights, improve public services, and
               strengthen community relations.
             </p>
 
@@ -65,48 +65,27 @@ const ProjectC = () => {
                 className="w-full rounded-lg shadow-lg"
               />
               <p className="text-sm text-gray-600 mt-2">
-                Residents engaging with the community survey at a local event.
+                Engaging with residents completing the survey at a local event.
               </p>
             </div>
 
             <h2>Action</h2>
-            <h3>Designed and Led the Largest Community Research Initiative in Council History</h3>
+            <h3>Designing and Leading a Large-Scale Research Initiative</h3>
 
-            <h4>Project Planning and Approval</h4>
-            <ul>
-              <li>
-                <strong>Developed a detailed project proposal</strong> outlining objectives, methodologies, timelines, and budget requirements.
-              </li>
-              <li>
-                <strong>Secured approval and funding</strong> from senior leadership by presenting a compelling case for the project's potential impact.
-              </li>
-            </ul>
+            <h4>Project Planning and Securing Buy-In</h4>
+            <p>
+              I began by developing a detailed project proposal outlining the objectives, methodologies, timelines, and budget requirements. To secure buy-in from senior leadership and key stakeholders, I presented a compelling case emphasising the potential impact on community welfare and efficient resource allocation.
+            </p>
 
             <h4>Survey Development and Methodology</h4>
-            <ul>
-              <li>
-                <strong>Designed a comprehensive survey instrument</strong> covering topics such as housing, healthcare, education, and social services.
-              </li>
-              <li>
-                <strong>Conducted pilot testing</strong> with 100 residents to refine questions and improve clarity.
-              </li>
-              <li>
-                Utilized <strong>Qualtrics</strong> for online survey creation and distribution.
-              </li>
-            </ul>
+            <p>
+              To ensure we gathered comprehensive data, I designed a survey instrument covering topics such as housing, healthcare, education, and social services. I conducted pilot testing with 100 residents to refine the questions and improve clarity. Utilising <strong>Qualtrics</strong>, I created and distributed the online survey.
+            </p>
 
-            <h4>Multi-Channel Data Collection Strategy</h4>
-            <ul>
-              <li>
-                <strong>Deployed online surveys</strong> via council platforms and social media channels.
-              </li>
-              <li>
-                <strong>Organized physical distribution</strong> through public facilities and community events.
-              </li>
-              <li>
-                <strong>Hosted focus groups</strong> with translation services in multiple languages to reach diverse populations.
-              </li>
-            </ul>
+            <h4>Multi-Channel Data Collection and Stakeholder Coordination</h4>
+            <p>
+              Recognising the importance of reaching a diverse audience, I coordinated with various departments and community organisations to deploy online surveys via council platforms and social media channels. I organised physical distribution through public facilities and community events. To engage with non-English speaking residents, I collaborated with translation services and hosted focus groups in multiple languages.
+            </p>
 
             <div className="my-8">
               <img
@@ -121,85 +100,42 @@ const ProjectC = () => {
 
             <h2>Impact</h2>
 
-            <h3>Informed Policy-Making</h3>
-            <ul>
-              <li>
-                <strong>Developed 15 new policy initiatives</strong> addressing key community issues identified through the research.
-              </li>
-              <li>
-                <strong>Redirected over £2 million</strong> in budget funds to under-resourced areas.
-              </li>
-              <li>
-                Implemented new community programs based on research findings, improving services in housing, healthcare, and education.
-              </li>
-            </ul>
+            <h3>Data-Driven Decision Making</h3>
+            <p>
+              The research findings enabled us to develop 15 new policy initiatives addressing key community issues. We successfully redirected over £2 million in budget funds to under-resourced areas. The implementation of new programmes based on the research improved services in housing, healthcare, and education.
+            </p>
 
-            <h3>Strengthened Community Relations</h3>
-            <ul>
-              <li>
-                Achieved a <strong>40% increase in community participation</strong> in council initiatives.
-              </li>
-              <li>
-                Higher reported levels of <strong>satisfaction and trust</strong> in local government.
-              </li>
-              <li>
-                Established improved communication channels with residents, fostering ongoing engagement.
-              </li>
-            </ul>
+            <h3>Enhanced Stakeholder Relations</h3>
+            <p>
+              By involving multiple stakeholders throughout the project, we strengthened relationships within the council and with external partners. This collaborative approach led to a 40% increase in community participation in council initiatives. Residents reported higher levels of satisfaction and trust in local government.
+            </p>
 
-            <h2>Skills Gained</h2>
+            <h2>Skills Gained and Business Relevance</h2>
 
-            <h3>Data Analytics</h3>
-            <ul>
-              <li>
-                Advanced statistical analysis using <strong>Python</strong>, <strong>R</strong>, and <strong>SPSS</strong>.
-              </li>
-              <li>
-                Data visualization with <strong>Power BI</strong>, <strong>Tableau</strong>, and <strong>ArcGIS</strong>.
-              </li>
-              <li>
-                Programming skills in Python (<strong>Pandas</strong>, <strong>NumPy</strong>) for data manipulation.
-              </li>
-            </ul>
+            <h3>Strategic Project Management</h3>
+            <p>
+              Leading a cross-functional team of 12 members, I honed my ability to coordinate efforts across departments and with external partners. Applying <strong>Agile methodologies</strong> allowed for project adaptation and efficient workflow management, skills that are directly transferable to managing complex projects in the private sector.
+            </p>
 
-            <h3>Project Management</h3>
-            <ul>
-              <li>
-                Led a cross-functional team of 12 members, coordinating efforts across departments.
-              </li>
-              <li>
-                Applied <strong>Agile methodologies</strong> for project adaptation and efficient workflow management.
-              </li>
-              <li>
-                Managed complex stakeholder relationships, ensuring alignment with council objectives.
-              </li>
-            </ul>
+            <h3>Stakeholder Engagement and Buy-In</h3>
+            <p>
+              Securing buy-in from senior leadership and key stakeholders was critical to the project's success. I developed persuasive communication strategies to align diverse interests and priorities, a competency essential for driving initiatives within businesses and ensuring support from decision-makers.
+            </p>
 
-            <h3>Community Engagement</h3>
-            <ul>
-              <li>
-                Developed <strong>cultural competence</strong> across diverse populations within the borough.
-              </li>
-              <li>
-                Enhanced <strong>public speaking and presentation skills</strong> through community meetings and council presentations.
-              </li>
-              <li>
-                Mastered <strong>inclusive engagement strategies</strong> to reach underrepresented groups.
-              </li>
-            </ul>
+            <h3>Data Analytics and Insight Generation</h3>
+            <p>
+              I enhanced my skills in advanced statistical analysis using <strong>Python</strong>, <strong>R</strong>, and <strong>SPSS</strong>. Utilising data visualisation tools like <strong>Power BI</strong> and <strong>Tableau</strong>, I transformed complex data into actionable insights. These abilities are crucial in the private sector for making informed business decisions and developing strategies based on data.
+            </p>
+
+            <h3>Effective Communication and Collaboration</h3>
+            <p>
+              Managing complex stakeholder relationships required clear and effective communication. I facilitated collaboration between departments and external organisations, ensuring alignment with project goals. This experience is valuable in any business environment where cross-functional teamwork and stakeholder management are key to success.
+            </p>
 
             <h2>Lessons Learned</h2>
-            <ul>
-              <li>
-                Effective community engagement requires <strong>multi-channel approaches</strong> to reach a diverse audience.
-              </li>
-              <li>
-                Continuous feedback loops with residents enhance the <strong>relevance and impact</strong> of policy initiatives.
-              </li>
-              <li>
-                Collaborative efforts between departments lead to more <strong>comprehensive and sustainable solutions</strong>.
-              </li>
-            </ul>
+            <p>
+              I learned that effective engagement requires multi-channel approaches to reach a diverse audience, whether customers, clients, or internal teams. Continuous feedback loops enhance the relevance and impact of initiatives, leading to better outcomes. Collaborative efforts across departments and with external partners result in more comprehensive and sustainable solutions, a principle that holds true in the private sector for driving innovation and achieving business objectives.
+            </p>
           </div>
         </motion.div>
       </div>

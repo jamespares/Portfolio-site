@@ -19,7 +19,7 @@ const ProjectB = () => {
     },
     {
       src: "/images/roam-translated.png",
-      alt: "ROAM website showing translated content in multiple languages",
+      alt: "Roam website showing translated content in multiple languages",
       caption: "Seamless content translation across different locales."
     },
   ];
@@ -27,7 +27,7 @@ const ProjectB = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/#projects" className="inline-flex items-center text-gray-600 hover:text-sky-600 mb-8">
+        <Link href="/#projects" className="inline-flex items-centre text-gray-600 hover:text-sky-600 mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Projects
         </Link>
@@ -44,10 +44,7 @@ const ProjectB = () => {
           <div className="prose prose-lg max-w-none">
             <h2>Introduction</h2>
             <p>
-              At Roam, our visa application platform aimed at tourists, students, and digital nomads, we sought to
-              expand our global reach. Recognizing the need to cater to a diverse international audience, we aimed to
-              localize our website into multiple languages to enhance user experience, increase engagement, and improve
-              our search engine visibility in new markets.
+              Working at <a href="https://roamfreely.io" target="_blank" rel="noopener noreferrer">Roam</a>, a visa application platform for tourists, students, and digital nomads, I aimed to expand our global reach. Recognising the need to cater to a diverse international audience, I set out to localise our website into multiple languages to enhance user experience, increase engagement, and improve our search engine visibility in new markets.
             </p>
 
             <div className="my-8">
@@ -63,10 +60,9 @@ const ProjectB = () => {
 
             <h2>Action</h2>
 
-            <h3>Evaluated Translation Approaches</h3>
+            <h3>Evaluating Translation Approaches</h3>
             <p>
-              To effectively localize our platform, we explored various translation methods to determine the most
-              efficient and SEO-friendly approach.
+              To effectively localise our platform, I explored various translation methods to determine the most efficient and SEO-friendly approach.
             </p>
 
             <h4>API-Based Translation</h4>
@@ -84,7 +80,7 @@ const ProjectB = () => {
               </li>
             </ul>
 
-            <h4>Internationalization Libraries (i18n)</h4>
+            <h4>Internationalisation Libraries (i18n)</h4>
             <ul>
               <li>
                 <strong>Explored using libraries like react-intl or i18next</strong> within our React application.
@@ -116,6 +112,9 @@ const ProjectB = () => {
                   <li>
                     Collaborated with professional translators to ensure high-quality, contextually accurate translations.
                   </li>
+                  <li>
+                    Utilised routing to ensure that each translation had its own unique page (e.g., <em>/en</em>, <em>/fr</em>, <em>/zh</em>), which significantly boosted SEO by allowing search engines to index each language-specific page.
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -123,7 +122,7 @@ const ProjectB = () => {
             <div className="my-8">
               <img
                 src="/images/roam-translated.png"
-                alt="ROAM website showing translated content in multiple languages"
+                alt="Roam website showing translated content in multiple languages"
                 className="w-full rounded-lg shadow-lg"
               />
               <p className="text-sm text-gray-600 mt-2">
@@ -131,14 +130,14 @@ const ProjectB = () => {
               </p>
             </div>
 
-            <h3>Optimized for SEO</h3>
+            <h3>Optimising for SEO</h3>
             <ul>
               <li>
                 <strong>Improved Search Engine Crawlability:</strong>
                 <ul>
                   <li>Static pages allowed search engine bots to index content without executing JavaScript.</li>
                   <li>
-                    Each language version had unique URLs (e.g., <em>www.roam.com/en/</em>, <em>www.roam.com/fr/</em>).
+                    Each language version had unique URLs (e.g., <em>https://roamfreely.io/en/</em>, <em>https://roamfreely.io/fr/</em>), enhancing visibility in localised searches.
                   </li>
                 </ul>
               </li>
@@ -152,7 +151,7 @@ const ProjectB = () => {
               <li>
                 <strong>Enhanced Metadata and Sitemaps:</strong>
                 <ul>
-                  <li>Customized meta titles and descriptions for each language.</li>
+                  <li>Customised meta titles and descriptions for each language.</li>
                   <li>Generated and submitted separate sitemaps for each language version to search engines.</li>
                 </ul>
               </li>
@@ -184,7 +183,7 @@ const ProjectB = () => {
 
             <h3>Improved SEO Performance</h3>
             <ul>
-              <li>Higher rankings in localized search results due to optimized content and technical SEO enhancements.</li>
+              <li>Higher rankings in localised search results due to optimised content and technical SEO enhancements.</li>
               <li>Increased organic traffic from non-English speaking countries.</li>
             </ul>
 
@@ -218,7 +217,7 @@ const ProjectB = () => {
               <li>Improved skills in coordinating cross-functional teams, including developers, translators, and SEO specialists.</li>
             </ul>
 
-            <h3>Localization and Cultural Awareness</h3>
+            <h3>Localisation and Cultural Awareness</h3>
             <ul>
               <li>Developed sensitivity to cultural nuances in language, ensuring translations were both accurate and appropriate.</li>
               <li>Maintained consistent brand voice across different languages and regions.</li>
@@ -228,7 +227,7 @@ const ProjectB = () => {
 
             <h3>Translation Automation Script</h3>
             <p>
-              Below is a snippet of the custom Node.js script used to automate the translation process. The script leverages the OpenAI GPT-4 API to generate high-quality translations efficiently.
+              Below is a snippet of the custom Node.js script I used to automate the translation process. The script leverages the OpenAI GPT-4 API to generate high-quality translations efficiently.
             </p>
 
             <div className="my-8">
@@ -318,7 +317,7 @@ main();`}
             <ul>
               <li>Static content generation significantly enhances performance and SEO over dynamic translation methods.</li>
               <li>Automation scripts can greatly reduce manual workload and potential for human error.</li>
-              <li>Collaboration across different teams (development, SEO, translation) is crucial for successful internationalization.</li>
+              <li>Collaboration across different teams (development, SEO, translation) is crucial for successful internationalisation.</li>
             </ul>
           </div>
         </motion.div>

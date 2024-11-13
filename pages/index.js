@@ -82,47 +82,31 @@ const PortfolioSite = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <motion.a 
-                href="#about"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-              >
-                About
-              </motion.a>
-              <motion.a 
-                href="#projects"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-              >
-                Projects
-              </motion.a>
-              <motion.a 
-                href="#skills"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-              >
-                Skills
-              </motion.a>
-              <Link href="/cv">
-                <motion.a 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                  className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-                >
-                  CV
-                </motion.a>
+              <Link href="#about">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  About
+                </span>
               </Link>
-              <motion.a 
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-              >
-                Contact
-              </motion.a>
+              <Link href="#projects">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  Projects
+                </span>
+              </Link>
+              <Link href="#skills">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  Skills
+                </span>
+              </Link>
+              <Link href="/cv">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  CV
+                </span>
+              </Link>
+              <Link href="#contact">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  Contact
+                </span>
+              </Link>
               
               {/* Dark Mode Toggle */}
               <motion.button
@@ -171,47 +155,31 @@ const PortfolioSite = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <motion.a 
-                href="#about"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="block px-3 py-2 text-gray-700 hover:text-sky-500"
-              >
-                About
-              </motion.a>
-              <motion.a 
-                href="#projects"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="block px-3 py-2 text-gray-700 hover:text-sky-500"
-              >
-                Projects
-              </motion.a>
-              <motion.a 
-                href="#skills"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="block px-3 py-2 text-gray-700 hover:text-sky-500"
-              >
-                Skills
-              </motion.a>
-              <Link href="/cv">
-                <motion.a 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                  className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400"
-                >
-                  CV
-                </motion.a>
+              <Link href="#about">
+                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                  About
+                </span>
               </Link>
-              <motion.a 
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-                className="block px-3 py-2 text-gray-700 hover:text-sky-500"
-              >
-                Contact
-              </motion.a>
+              <Link href="#projects">
+                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                  Projects
+                </span>
+              </Link>
+              <Link href="#skills">
+                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                  Skills
+                </span>
+              </Link>
+              <Link href="/cv">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                  CV
+                </span>
+              </Link>
+              <Link href="#contact">
+                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                  Contact
+                </span>
+              </Link>
             </div>
           </div>
         )}
