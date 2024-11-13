@@ -435,16 +435,21 @@ const PortfolioSite = () => {
             >
               Get in Touch
             </motion.h2>
-            <motion.div className="flex justify-center space-x-8">
+            <div className="flex justify-center space-x-8">
+              {/* Gmail Link */}
               <motion.a 
-                href="mailto:james@roamfreely.io"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=james@roamfreely.io"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 rounded-lg p-2"
               >
                 <Mail className="w-6 h-6 mr-2" />
-                <span>Email</span>
+                <span>Gmail</span>
               </motion.a>
+
+              {/* LinkedIn */}
               <motion.a 
                 href="https://www.linkedin.com/in/james-p-ba7653207/"
                 target="_blank"
@@ -456,6 +461,8 @@ const PortfolioSite = () => {
                 <Link2 className="w-6 h-6 mr-2" />
                 <span>LinkedIn</span>
               </motion.a>
+
+              {/* GitHub */}
               <motion.a 
                 href="https://github.com/jamespares"
                 target="_blank"
@@ -467,7 +474,7 @@ const PortfolioSite = () => {
                 <Link2 className="w-6 h-6 mr-2" />
                 <span>GitHub</span>
               </motion.a>
-            </motion.div>
+            </div>
           </div>
         </section>
 
