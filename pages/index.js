@@ -16,9 +16,11 @@ const PortfolioSite = () => {
       if (savedTheme) {
         setDarkMode(savedTheme === 'dark');
         document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setDarkMode(true);
-        document.documentElement.classList.add('dark');
+      } else {
+        // Default to light mode instead of checking system preferences
+        setDarkMode(false);
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
       }
     }
   }, []);
