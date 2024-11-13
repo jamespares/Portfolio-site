@@ -103,3 +103,11 @@ html {
 .animate-marquee {
   animation: marquee var(--duration) linear infinite;
 }
+
+:root {
+  --grid-opacity: 1;
+}
+
+.dark {
+  --grid-opacity: 0.1;
+}
