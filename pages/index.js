@@ -459,49 +459,6 @@ const PortfolioSite = () => {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="py-32 bg-gray-50 dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Education</h2>
-            <div className="grid grid-cols-1 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-2 border-transparent hover:border-sky-500"
-              >
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Imperial College London</h3>
-                    <p className="text-gray-600 dark:text-gray-400 italic">Data Analysis (6-Month Bootcamp)</p>
-                    <p className="text-gray-700 dark:text-gray-300">Grade: 98%</p>
-                  </div>
-
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">University of Nottingham</h3>
-                    <div className="space-y-2">
-                      <div>
-                        <p className="text-gray-600 dark:text-gray-400 italic">MA Politics and Contemporary History</p>
-                        <p className="text-gray-700 dark:text-gray-300">Grade: High Merit</p>
-                      </div>
-                      <div>
-                        <p className="text-gray-600 dark:text-gray-400 italic">BA English Language and Literature</p>
-                        <p className="text-gray-700 dark:text-gray-300">Grade: First Class</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* Contact Section */}
         <section id="contact" className="py-32 bg-white dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
