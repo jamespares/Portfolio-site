@@ -234,13 +234,15 @@ const PortfolioSite = () => {
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   Hi. My name is James. I am an early-career professional with two years of experience managing projects in city government 
-                  and one year leading product management at a technology start-up. I have experience and certification
-                  in both agile and waterfall project management methodologies. I am also skilled with web development, software development,
+                  and one year leading product management at a technology start-up.  
+                  I have experience and certification in both agile and waterfall project management methodologies. I am also experienced in web development, software development,
                   data analysis, and data visualisation. I have led teams to deliver features on both the front and back end of 
                   complex digital products. This includes translation tools, high-volume webscraping, 
                   data processing, data pipeline construction, and API and SDK integrations. I have also led on both 
                   market and user research workstreams, as well as marketing strategies covering SEO, social media, and content marketing.
-                  I am currently seeking opportunities to continue helping teams deliver high-impact projects in the technology sector. Please see 
+                  In addition to this technical experience, I have spent a short period of time working at a leading international law firm, where I 
+                  worked on high-value deals and developed my understanding of corporate finance and legal processes, particularly around Venture Capital and Private Equity.
+                  I am also a fluent French speaker. I am currently seeking opportunities at start-ups and scale-ups in the technology sector. Please see 
                   below for some of my work.
                 </p>
               </motion.div>
