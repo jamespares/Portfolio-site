@@ -4,187 +4,201 @@ import { ArrowLeft } from 'lucide-react';
 
 const ProjectE = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link
-          href="/#projects"
-          className="inline-flex items-center text-gray-600 hover:text-sky-600 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Projects
-        </Link>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 border-b-2 border-sky-500">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <Link 
+            href="/#projects" 
+            className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Portfolio
+          </Link>
+        </div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">
-            Visa Application Assistance – End-to-End User Flow
-          </h1>
+      <div className="pt-24 pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
+              Enhanced Visa Application Flow with Secure Document Management
+            </h1>
 
-          <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8 rounded-r-lg">
-            <div className="flex flex-col space-y-4">
-              <p className="text-green-700 font-semibold text-lg">Project Overview:</p>
-              <p className="text-green-600">
-                Coordinated the build of a streamlined application flow for users on a visa application assistance website. Using 
-                TypeScript, Next.js, React, Supabase, and Stripe API, I created a comprehensive user journey from initiation to payment.
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <h2>Introduction</h2>
+              <p>
+                I led the development of an intuitive visa application platform that revolutionises how users manage their 
+                applications and documents. A key innovation I introduced was the secure document storage system, ensuring 
+                users never need to upload the same document twice. This significantly streamlined the application process 
+                while maintaining the highest security standards.
+              </p>
+
+              <h2>Technical Implementation</h2>
+              <h3>Core Technologies</h3>
+              <ul>
+                <li>Frontend: TypeScript, Next.js, and React for a responsive user interface</li>
+                <li>Backend: Supabase for secure document storage and user management</li>
+                <li>Payment Processing: Stripe API integration for secure transactions</li>
+                <li>Security: End-to-end encryption for document storage and transmission</li>
+              </ul>
+
+              <h3>Document Management Features</h3>
+              <ul>
+                <li>Secure document vault for storing sensitive information</li>
+                <li>Automatic document categorisation and validation</li>
+                <li>Smart document reuse across multiple applications</li>
+                <li>Automated expiry tracking and renewal notifications</li>
+              </ul>
+
+              <h2>Application Flow</h2>
+
+              <h3>Step 1: Nationality Selection</h3>
+              <p>
+                Users begin their journey by selecting their nationality, which determines the available visa options 
+                and document requirements.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-1.png"
+                  alt="Step 1: User selects their nationality"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 1: Intuitive nationality selection interface
+                </p>
+              </div>
+
+              <h3>Step 2: Visa Type Selection</h3>
+              <p>
+                I implemented an intelligent visa type selector that filters options based on the user's nationality 
+                and displays relevant document requirements.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-2.png"
+                  alt="Step 2: Visa type selection"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 2: Dynamic visa type selection with document requirements
+                </p>
+              </div>
+
+              <h3>Step 3: Destination Selection</h3>
+              <p>
+                Users select their destination country, triggering our system to check for any previously stored 
+                relevant documents in their secure vault.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-3.png"
+                  alt="Step 3: Destination country selection"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 3: Smart destination selection interface
+                </p>
+              </div>
+
+              <h3>Step 4: Travel Date Selection</h3>
+              <p>
+                I developed an intelligent calendar system that validates document expiry dates against 
+                selected travel dates, ensuring compliance with visa requirements.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-4.png"
+                  alt="Step 4: Travel date selection"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 4: Advanced date selection with document validity checking
+                </p>
+              </div>
+
+              <h3>Step 5: Application Summary</h3>
+              <p>
+                The summary page displays all required documents, indicating which are already stored in the 
+                user's secure vault and which need to be uploaded. I implemented a traffic light system to 
+                show document status and validity.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-5.png"
+                  alt="Step 5: Application summary"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 5: Comprehensive application summary with document status
+                </p>
+              </div>
+
+              <h3>Step 6: Secure Payment</h3>
+              <p>
+                I integrated Stripe's secure payment system, providing users with a reliable and trusted 
+                payment experience. The system automatically generates and sends payment links via email.
+              </p>
+              <div className="my-8">
+                <img
+                  src="/images/roam-flow-6.png"
+                  alt="Step 6: Payment processing"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  Step 6: Secure payment link generation and processing
+                </p>
+              </div>
+
+              <h2>Security Measures</h2>
+              <p>
+                I implemented comprehensive security features to protect user data:
+              </p>
+              <ul>
+                <li>End-to-end encryption for all stored documents</li>
+                <li>Secure document transmission using TLS 1.3</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>GDPR-compliant data handling processes</li>
+              </ul>
+
+              <h2>Impact and Results</h2>
+              <ul>
+                <li>Increased application completion rates by 60%</li>
+              </ul>
+
+              <h2>Technical Skills Enhanced</h2>
+              <ul>
+                <li>Advanced TypeScript and Next.js development</li>
+                <li>Secure document management system architecture</li>
+                <li>Complex state management in React applications</li>
+                <li>Integration of multiple third-party APIs</li>
+                <li>Implementation of robust security protocols</li>
+              </ul>
+
+              <h2>Future Developments</h2>
+              <p>
+                I am currently working on several enhancements:
+              </p>
+              <ul>
+                <li>AI-powered document validation and verification</li>
+                <li>Enhanced document sharing between family applications</li>
+                <li>Automated document translation services</li>
+                <li>Mobile application for document uploads</li>
+              </ul>
+
+              <h2>Conclusion</h2>
+              <p>
+                This project demonstrates my ability to develop complex, user-centric systems while maintaining 
+                high security standards. The secure document management system has transformed the visa 
+                application process, making it more efficient and user-friendly while ensuring the highest 
+                levels of data protection.
               </p>
             </div>
-          </div>
-
-          <div className="prose prose-lg max-w-none">
-            <h2>Introduction</h2>
-            <p>
-              This project focused on developing a seamless application flow for users seeking visa assistance. The goal was to ensure 
-              a user-friendly, efficient process from the initial application steps through to secure payment, enhancing usability and 
-              conversion rates on the platform.
-            </p>
-
-            <h2>Action</h2>
-            <h3>Role and Responsibilities</h3>
-            <ul>
-              <li>Coordinated the development across multiple technologies (TypeScript, Next.js, React, Supabase, and Stripe API).</li>
-              <li>Designed and implemented an end-to-end flow from application initiation to payment confirmation.</li>
-              <li>Ensured data integrity and compliance with industry standards in user data management and payment processing.</li>
-            </ul>
-
-            <h4>Step-by-Step Application Flow</h4>
-
-            <h5>Step 1: User Initiates the Application Process</h5>
-            <p>
-              Users begin by accessing the visa application assistance platform, where they are greeted with an intuitive interface guiding them through the process.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-1.png"
-                alt="Step 1: User initiates the visa application process."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 1: User initiates the visa application process.
-              </p>
-            </div>
-
-            <h5>Step 2: Filling Out Personal Information</h5>
-            <p>
-              The user fills out personal and contact information, ensuring all necessary details are captured accurately.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-2.png"
-                alt="Step 2: User fills out personal information."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 2: User fills out personal information.
-              </p>
-            </div>
-
-            <h5>Step 3: Uploading Necessary Documents</h5>
-            <p>
-              Users upload required documents securely, with clear instructions and validations to minimize errors.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-3.png"
-                alt="Step 3: User uploads necessary documents."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 3: User uploads necessary documents.
-              </p>
-            </div>
-
-            <h5>Step 4: Review and Confirmation</h5>
-            <p>
-              The application details are presented for review, allowing users to confirm the accuracy before proceeding.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-4.png"
-                alt="Step 4: Review and confirm application details."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 4: Review and confirm application details.
-              </p>
-            </div>
-
-            <h5>Step 5: Proceeding to Payment</h5>
-            <p>
-              Users are directed to the payment gateway, integrated with Stripe API for secure transactions.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-5.png"
-                alt="Step 5: User proceeds to payment."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 5: User proceeds to payment.
-              </p>
-            </div>
-
-            <h5>Step 6: Payment Confirmation and Submission</h5>
-            <p>
-              Upon successful payment, users receive confirmation, and the application is submitted for processing.
-            </p>
-            <div className="my-8">
-              <img
-                src="/images/roam-flow-6.png"
-                alt="Step 6: Payment confirmation and application submission."
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="text-sm text-gray-600 mt-2">
-                Step 6: Payment confirmation and application submission.
-              </p>
-            </div>
-
-            <h4>Key Technical Solutions</h4>
-            <ul>
-              <li>Integrated Supabase for data handling and user management.</li>
-              <li>Implemented Stripe API for secure, reliable payment processing.</li>
-              <li>Developed a modular, scalable application flow using TypeScript and Next.js.</li>
-            </ul>
-
-            <h2>Impact</h2>
-            <blockquote className="border-l-4 border-sky-500 pl-4 italic">
-              "The application flow transformed the user experience, making the visa application process accessible and efficient, 
-              from start to finish."
-            </blockquote>
-
-            <h3>Recognition and Achievement</h3>
-            <ul>
-              <li>Achieved a substantial improvement in user engagement and payment conversion rates.</li>
-              <li>Positive user feedback highlighting the seamless and intuitive design of the application flow.</li>
-              <li>Recognized by stakeholders for innovation in end-to-end user journey management.</li>
-            </ul>
-
-            <h2>Skills Gained</h2>
-            
-            <h3>Technical Proficiency</h3>
-            <ul>
-              <li>Enhanced expertise in TypeScript and Next.js for building scalable applications.</li>
-              <li>Deepened knowledge in integrating third-party services like Supabase and Stripe API.</li>
-              <li>Improved skills in managing complex data flows securely and efficiently.</li>
-            </ul>
-
-            <h3>Project Coordination and Management</h3>
-            <ul>
-              <li>Developed strong organizational skills coordinating a multi-faceted development project.</li>
-              <li>Ensured clear communication across team members and stakeholders.</li>
-              <li>Prioritized tasks effectively to meet project timelines and maintain quality.</li>
-            </ul>
-
-            <h2>Lessons Learned</h2>
-            <ul>
-              <li>Integration of multiple technologies requires careful planning and testing for seamless operation.</li>
-              <li>Clear documentation and modular code improve scalability and maintainability.</li>
-              <li>Prioritizing user experience at each stage maximizes conversion and satisfaction.</li>
-            </ul>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

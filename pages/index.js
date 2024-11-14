@@ -42,8 +42,8 @@ const PortfolioSite = () => {
     },
     {
       id: "project-b",
-      title: "Roam – Internationalization & SEO",
-      description: "Led website internationalization initiative resulting in 50% growth in international traffic and 30% increase in user engagement",
+      title: "Roam – Internationalisation & SEO",
+      description: "Led website internationalisation initiative resulting in 50% growth in international traffic and 30% increase in user engagement",
       tags: ["Next.js", "SEO", "Node.js", "i18n"],
       image: "/images/roam.png"
     },
@@ -83,27 +83,27 @@ const PortfolioSite = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <Link href="#about">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                   About
                 </span>
               </Link>
               <Link href="#projects">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                   Projects
                 </span>
               </Link>
               <Link href="#skills">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                   Skills
                 </span>
               </Link>
               <Link href="/cv">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                   CV
                 </span>
               </Link>
               <Link href="#contact">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                   Contact
                 </span>
               </Link>
@@ -118,9 +118,9 @@ const PortfolioSite = () => {
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                ) : (
                   <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                ) : (
+                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                 )}
               </motion.button>
             </div>
@@ -136,9 +136,9 @@ const PortfolioSite = () => {
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                ) : (
                   <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                ) : (
+                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                 )}
               </motion.button>
               <button
@@ -156,27 +156,27 @@ const PortfolioSite = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link href="#about">
-                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   About
                 </span>
               </Link>
               <Link href="#projects">
-                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   Projects
                 </span>
               </Link>
               <Link href="#skills">
-                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   Skills
                 </span>
               </Link>
               <Link href="/cv">
-                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-sky-500 dark:hover:text-sky-400">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   CV
                 </span>
               </Link>
               <Link href="#contact">
-                <span className="block px-3 py-2 text-gray-700 hover:text-sky-500">
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   Contact
                 </span>
               </Link>
@@ -236,7 +236,7 @@ const PortfolioSite = () => {
                   Hi. My name is James. I am an early-career professional with two years of experience managing projects in city government 
                   and one year leading product management at a technology start-up. I have experience and certification
                   in both agile and waterfall project management methodologies. I am also skilled with web development, software development,
-                  data analysis, and data visualization. I have led teams to deliver features on both the front and back end of 
+                  data analysis, and data visualisation. I have led teams to deliver features on both the front and back end of 
                   complex digital products. This includes translation tools, high-volume webscraping, 
                   data processing, data pipeline construction, and API and SDK integrations. I have also led on both 
                   market and user research workstreams, as well as marketing strategies covering SEO, social media, and content marketing.
@@ -264,11 +264,13 @@ const PortfolioSite = () => {
                     whileHover={{ scale: 1.02 }}
                     className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden h-full"
                   >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-36 object-contain bg-white dark:bg-gray-700 p-1"
-                    />
+                    <div className="bg-white p-4">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-36 object-contain"
+                      />
+                    </div>
                     <div className="p-4">
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                       <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{project.description}</p>
@@ -295,16 +297,8 @@ const PortfolioSite = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Skills & Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-2 border-transparent hover:border-sky-500"
+              <div 
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Product Management</h3>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300">
@@ -317,14 +311,14 @@ const PortfolioSite = () => {
                   </li>
                   <li>Design & Development:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Figma & Adobe XD</li>
+                      <li>• Figma </li>
                       <li>• Wireframing & Prototyping</li>
-                      <li>• A/B Testing (Optimizely)</li>
+                      <li>• A/B Testing </li>
                     </ul>
                   </li>
                   <li>Product Analytics:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Google Analytics & Mixpanel</li>
+                      <li>• Google Analytics </li>
                       <li>• Amplitude & Heap</li>
                       <li>• Feature Flagging (LaunchDarkly)</li>
                     </ul>
@@ -337,17 +331,9 @@ const PortfolioSite = () => {
                     </ul>
                   </li>
                 </ul>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-2 border-transparent hover:border-sky-500"
+              </div>
+              <div 
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Management</h3>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300">
@@ -355,42 +341,34 @@ const PortfolioSite = () => {
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Agile (Scrum & Kanban)</li>
                       <li>• Waterfall & Hybrid</li>
-                      <li>• PRINCE2 & PMBOK</li>
+                      <li>• PRINCE2 Practitioner </li>
                     </ul>
                   </li>
                   <li>Project Planning Tools:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Jira & Confluence</li>
+                      <li>• Jira </li>
                       <li>• MS Project & Gantt Charts</li>
                       <li>• Mermaid Diagramming</li>
                     </ul>
                   </li>
                   <li>Collaboration Tools:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Trello & Asana</li>
-                      <li>• Monday.com & ClickUp</li>
-                      <li>• Slack & MS Teams</li>
+                      <li>• Trello </li>
+                      <li>• Google Workspace </li>
+                      <li>• Slack, MS Teams, WhatsApp </li>
                     </ul>
                   </li>
                   <li>Documentation & Tracking:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Risk Registers & RAID Logs</li>
-                      <li>• Resource Planning Tools</li>
-                      <li>• Budget Tracking Systems</li>
+                      <li>• Stakeholder Mapping </li>
+                      <li>• Budget Tracking </li>
                     </ul>
                   </li>
                 </ul>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-2 border-transparent hover:border-sky-500"
+              </div>
+              <div 
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Data Analysis</h3>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300">
@@ -404,10 +382,10 @@ const PortfolioSite = () => {
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Scikit-learn (Classification, Regression)</li>
                       <li>• Supervised Learning (Random Forest, XGBoost)</li>
-                      <li>• Unsupervised Learning (K-means, DBSCAN)</li>
+                      <li>• Unsupervised Learning (K-means)</li>
                     </ul>
                   </li>
-                  <li>Data Visualization:
+                  <li>Data Visualisation:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Matplotlib & Seaborn</li>
                       <li>• Plotly & Dash</li>
@@ -417,12 +395,12 @@ const PortfolioSite = () => {
                   <li>Business Tools:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Excel (Advanced Functions, Pivot Tables)</li>
-                      <li>• Google Sheets</li>
+                      <li>• Google Sheets </li>
                       <li>• SQL & Database Management</li>
                     </ul>
                   </li>
                 </ul>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
