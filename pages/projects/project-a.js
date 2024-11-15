@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import Header from '../../components/Header';
+import { useContext } from 'react';
 
 const ProjectA = () => {
   const images = [
@@ -35,7 +37,7 @@ const ProjectA = () => {
             className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Portfolio
+            Back to Projects
           </Link>
         </div>
       </div>

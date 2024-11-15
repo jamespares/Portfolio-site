@@ -1,12 +1,16 @@
+import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Globe } from 'lucide-react';
+import { LanguageContext } from '../../context/LanguageContext';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-typescript';
 import { useEffect } from 'react';
 
 const ProjectB = () => {
+  const { language, toggleLanguage, translations } = useContext(LanguageContext);
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);

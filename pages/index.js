@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Menu, X, Mail, Link2, Sun, Moon } from 'lucide-react';
 import { motion } from "framer-motion";
 import GridPattern from '../components/GridPattern';
@@ -233,17 +233,11 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi. My name is James. I am an early-career professional with two years of experience managing projects in city government 
-                  and one year leading product management at a technology start-up.  
-                  I have experience and certification in both agile and waterfall project management methodologies. I am also experienced in web development, software development,
-                  data analysis, and data visualisation. I have led teams to deliver features on both the front and back end of 
-                  complex digital products. This includes translation tools, high-volume webscraping, 
-                  data processing, data pipeline construction, and API and SDK integrations. I have also led on both 
-                  market and user research workstreams, as well as marketing strategies covering SEO, social media, and content marketing.
-                  In addition to this technical experience, I have spent a short period of time working at a leading international law firm, where I 
-                  worked on high-value deals and developed my understanding of corporate finance and legal processes, particularly around Venture Capital and Private Equity.
-                  I am also a fluent French speaker. I am currently seeking opportunities at start-ups and scale-ups in the technology sector. Please see 
-                  below for some of my work.
+                Hi there. My name is James. 
+                I'm a French-speaking early-career professional with two years of experience managing projects in city government and one year leading product management at a 
+                technology start-up. I have experience with Agile and Waterfall project management methodologies, as well as web development, software development,
+                data analysis, and data visualisation. I am currently seeking remote opportunities at start-ups and scale-ups in the technology sector. 
+                Please see my CV above and examples of my work below.
                 </p>
               </motion.div>
             </div>
