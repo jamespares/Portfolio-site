@@ -243,7 +243,7 @@ const PortfolioSite = () => {
                   >
                     Roam
                   </a>. I have experience with Agile and Waterfall project management methodologies, including PRINCE2 and Agile certification. I also have exposure to web development, software development,
-                  data analysis, and data visualisation. I am currently seeking a roles, ideally in the technology sector.
+                  data analysis, and data visualisation. I am currently seeking roles, ideally in the technology sector.
                   Please see my CV above, and examples of my work below.
                 </p>
               </motion.div>
