@@ -1,13 +1,20 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { LanguageProvider } from '../context/LanguageContext'
+import Script from 'next/script'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <LanguageProvider>
+    <>
       <Component {...pageProps} />
-    </LanguageProvider>
+      {process.env.NODE_ENV === 'production' && (
+        <>
+          <Script 
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+            data-skip-dnt="true"
+            strategy="lazyOnload"
+          />
+        </>
+      )}
+    </>
   )
 }
-
-export default MyApp
