@@ -233,8 +233,8 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi there. My name is James. 
-                  I'm a French-speaking early-career professional with two years of experience managing projects in city government, in London, and one year leading product management at a 
+                  Hi there. My name is James. I'm a young professional currently seeking work in the technology sector.
+                  I have two years of experience managing projects in city government, in London, and one year leading product management at a 
                   technology start-up, <a 
                     href="https://roamfreely.io" 
                     target="_blank" 
@@ -243,7 +243,7 @@ const PortfolioSite = () => {
                   >
                     Roam
                   </a>. I have experience with Agile and Waterfall project management methodologies, including PRINCE2 and Agile certification. I also have exposure to web development, software development,
-                  data analysis, and data visualisation. I am currently seeking roles, ideally in the technology sector.
+                  data analysis, and data visualisation. And I speak French fluently.
                   Please see my CV above, and examples of my work below.
                 </p>
               </motion.div>
