@@ -242,8 +242,8 @@ const PortfolioSite = () => {
                     className="text-sky-600 dark:text-sky-400 hover:underline"
                   >
                     Roam
-                  </a>. I have experience with Agile and Waterfall project management methodologies, as well as web development, software development,
-                  data analysis, and data visualisation. I am currently seeking remote opportunities at start-ups and scale-ups in the technology sector. 
+                  </a>. I have experience with Agile and Waterfall project management methodologies, including PRINCE2 and Agile certification. I also have exposure to web development, software development,
+                  data analysis, and data visualisation. I am currently seeking project management opportunities at start-ups and scale-ups in the technology sector. 
                   Please see my CV above and examples of my work below.
                 </p>
               </motion.div>
