@@ -198,7 +198,7 @@ const PortfolioSite = () => {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Need someone that gets stuff done?
+                Need a project manager?
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 You're in the right place.
@@ -233,8 +233,8 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi there. My name is James. I'm a young professional currently seeking work in the technology sector.
-                  I have two years of experience managing projects in city government, in London, and one year leading product management at a 
+                  Hi there. My name is James. I'm a young professional currently seeking a junior project management role.
+                  I have two years of experience managing projects in city government, in London, and one year managing projects at a 
                   technology start-up, <a 
                     href="https://roamfreely.io" 
                     target="_blank" 
@@ -322,14 +322,12 @@ const PortfolioSite = () => {
                   <li>Product Analytics:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Google Analytics </li>
-                      <li>• Amplitude & Heap</li>
-                      <li>• Feature Flagging (LaunchDarkly)</li>
+                      <li>• Simple Analytics</li>
                     </ul>
                   </li>
                   <li>Documentation & Planning:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Product Requirements (PRDs)</li>
-                      <li>• Miro & FigJam</li>
+                      <li>• Product/User Requirements (PRDs)</li>
                       <li>• Google Docs & Sheets</li>
                     </ul>
                   </li>
@@ -351,7 +349,7 @@ const PortfolioSite = () => {
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Jira </li>
                       <li>• MS Project & Gantt Charts</li>
-                      <li>• Mermaid Diagramming</li>
+                      <li>• Mermaid/D2 Diagramming</li>
                     </ul>
                   </li>
                   <li>Collaboration Tools:
@@ -391,7 +389,7 @@ const PortfolioSite = () => {
                   <li>Data Visualisation:
                     <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
                       <li>• Matplotlib & Seaborn</li>
-                      <li>• Plotly & Dash</li>
+                      <li>• Plotly, Dash, Streamlit, Highcharts</li>
                       <li>• Tableau & Power BI</li>
                     </ul>
                   </li>
