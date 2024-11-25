@@ -11,7 +11,7 @@ const CV = () => {
           className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Portfolio
+          Back
         </Link>
 
         <motion.div
