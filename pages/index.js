@@ -113,29 +113,29 @@ const PortfolioSite = () => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               <Link href="#about">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2">
                   {t('nav.about')}
                 </span>
               </Link>
               <Link href="#projects">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2">
                   {t('nav.projects')}
                 </span>
               </Link>
               <Link href="#skills">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2">
                   {t('nav.skills')}
                 </span>
               </Link>
               <Link href="/cv">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-1 rounded-full border-2 border-emerald-500">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-4 py-2">
                   {t('nav.cv')}
                 </span>
               </Link>
               <Link href="#contact">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2">
                   {t('nav.contact')}
                 </span>
               </Link>
@@ -150,11 +150,8 @@ const PortfolioSite = () => {
                   className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center"
                   aria-label="Toggle language"
                 >
-                  <span className="mr-2" role="img" aria-label={router.locale === 'en' ? 'English' : 'Français'}>
+                  <span role="img" aria-label={router.locale === 'en' ? 'English' : 'Français'}>
                     {getLanguageEmoji(router.locale)}
-                  </span>
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {router.locale === 'en' ? 'EN' : 'FR'}
                   </span>
                 </motion.button>
 
@@ -279,12 +276,57 @@ const PortfolioSite = () => {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center bg-gray-50 dark:bg-gray-900">
           <GridPattern className="dark:opacity-10" />
+          
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0.7, x: "5vw", y: "5vh" }}
+              animate={{ 
+                x: ["5vw", "90vw", "5vw"],
+                y: ["5vh", "90vh", "5vh"]
+              }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute w-24 h-24 border-8 bg-sky-100/30 dark:bg-sky-900/30 border-sky-500/30 rounded-lg"
+              style={{ transform: 'rotate(-15deg)' }}
+            />
+            <motion.div
+              initial={{ opacity: 0.5, x: "90vw", y: "90vh" }}
+              animate={{ 
+                x: ["90vw", "5vw", "90vw"],
+                y: ["90vh", "5vh", "90vh"]
+              }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute w-16 h-16 border-8 bg-blue-100/30 dark:bg-blue-900/30 border-blue-500/30 rounded-full"
+            />
+            <motion.div
+              initial={{ opacity: 0.6, x: "50vw", y: "5vh" }}
+              animate={{ 
+                x: ["50vw", "5vw", "90vw", "50vw"],
+                y: ["5vh", "90vh", "5vh", "5vh"]
+              }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute w-20 h-20 border-8 bg-emerald-100/30 dark:bg-emerald-900/30 border-emerald-500/30 rotate-45"
+            />
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center space-y-8"
+              className="text-center space-y-12"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -316,41 +358,21 @@ const PortfolioSite = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="flex flex-col items-center space-y-6"
+                className="flex flex-col items-center space-y-8"
               >
-                <p className="text-xl text-gray-600 dark:text-gray-300">
+                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
                   {t('hero.subtitle')}
                 </p>
-
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                  className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400"
-                >
-                  <span className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    {t('hero.skills.digital')}
-                  </span>
-                  <span className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                    {t('hero.skills.agile')}
-                  </span>
-                  <span className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    {t('hero.skills.data')}
-                  </span>
-                </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5, duration: 0.5 }}
-                  className="flex gap-4"
+                  className="flex gap-6"
                 >
                   <Link 
                     href="#projects"
-                    className="inline-flex items-center px-6 py-3 border-2 border-sky-500 text-sky-600 dark:text-sky-400 font-semibold rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors duration-300"
+                    className="inline-flex items-center px-8 py-3 border-2 border-sky-500 text-sky-600 dark:text-sky-400 font-semibold rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors duration-300"
                   >
                     {t('hero.buttons.work')}
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -359,7 +381,7 @@ const PortfolioSite = () => {
                   </Link>
                   <Link 
                     href="/cv"
-                    className="inline-flex items-center px-6 py-3 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-300"
+                    className="inline-flex items-center px-8 py-3 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-300"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -370,21 +392,6 @@ const PortfolioSite = () => {
               </motion.div>
             </motion.div>
           </div>
-
-          {/* Decorative Elements */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute top-1/4 left-10 w-12 h-12 border-2 border-sky-500 rounded-lg hidden md:block"
-            style={{ transform: 'rotate(-15deg)' }}
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.3 }}
-            transition={{ delay: 2.2, duration: 1 }}
-            className="absolute bottom-1/4 right-10 w-8 h-8 border-2 border-blue-500 rounded-full hidden md:block"
-          />
         </section>
 
         {/* About Section */}
