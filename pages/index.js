@@ -233,7 +233,7 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi there. My name is James. I'm a young professional currently seeking a junior project management role.
+                  Hi there. My name is James. I'm a young professional currently seeking a project management role.
                   I have two years of experience managing projects in city government, in London, and one year managing projects at a 
                   technology start-up, <a 
                     href="https://roamfreely.io" 

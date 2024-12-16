@@ -21,7 +21,7 @@ const CV = () => {
           className="flex justify-center"
         >
           <img
-            src="/images/CV.png"
+            src="/images/cv_new.png"
             alt="James Pares CV"
             className="max-w-full shadow-lg rounded-lg"
           />
