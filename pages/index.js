@@ -1,13 +1,42 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu, X, Mail, Link2, Sun, Moon } from 'lucide-react';
+import { Menu, X, Mail, Link2, Sun, Moon, Globe } from 'lucide-react';
 import { motion } from "framer-motion";
 import GridPattern from '../components/GridPattern';
 import Link from 'next/link';
 import { Marquee } from '../components/Marquee';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+
+export async function getStaticProps({ locale = 'en' }) {
+  try {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ['common'])),
+      },
+    };
+  } catch (error) {
+    console.error('Translation loading error:', error);
+    return {
+      props: {
+        ...(await serverSideTranslations('en', ['common'])), // Fallback to English
+      },
+    };
+  }
+}
 
 const PortfolioSite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const { t } = useTranslation('common');
+  const router = useRouter();
+
+  // Language toggle function
+  const toggleLanguage = (locale) => {
+    router.push(router.pathname, router.pathname, { locale });
+    setIsLangMenuOpen(false);
+  };
 
   // Check for user's preferred color scheme and saved preference
   useEffect(() => {
@@ -17,7 +46,6 @@ const PortfolioSite = () => {
         setDarkMode(savedTheme === 'dark');
         document.documentElement.classList.toggle('dark', savedTheme === 'dark');
       } else {
-        // Default to light mode instead of checking system preferences
         setDarkMode(false);
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
@@ -70,6 +98,10 @@ const PortfolioSite = () => {
     }
   ];
 
+  const getLanguageEmoji = (locale) => {
+    return locale === 'en' ? '🇬🇧' : '🇫🇷';
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       {/* Navigation */}
@@ -84,30 +116,76 @@ const PortfolioSite = () => {
             <div className="hidden md:flex items-center space-x-8">
               <Link href="#about">
                 <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
-                  About
+                  {t('nav.about')}
                 </span>
               </Link>
               <Link href="#projects">
                 <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
-                  Projects
+                  {t('nav.projects')}
                 </span>
               </Link>
               <Link href="#skills">
                 <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
-                  Skills
+                  {t('nav.skills')}
                 </span>
               </Link>
               <Link href="/cv">
-                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
-                  CV
+                <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-1 rounded-full border-2 border-emerald-500">
+                  {t('nav.cv')}
                 </span>
               </Link>
               <Link href="#contact">
                 <span className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
-                  Contact
+                  {t('nav.contact')}
                 </span>
               </Link>
               
+              {/* Language Toggle */}
+              <div className="relative">
+                <motion.button
+                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center"
+                  aria-label="Toggle language"
+                >
+                  <span className="mr-2" role="img" aria-label={router.locale === 'en' ? 'English' : 'Français'}>
+                    {getLanguageEmoji(router.locale)}
+                  </span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
+                    {router.locale === 'en' ? 'EN' : 'FR'}
+                  </span>
+                </motion.button>
+
+                {isLangMenuOpen && (
+                  <div className="absolute right-0 mt-2 py-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+                    <button
+                      onClick={() => toggleLanguage('en')}
+                      className={`block w-full text-left px-4 py-2 text-sm ${
+                        router.locale === 'en'
+                          ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/20'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      }`}
+                    >
+                      <span className="mr-2" role="img" aria-label="English">🇬🇧</span>
+                      English
+                    </button>
+                    <button
+                      onClick={() => toggleLanguage('fr')}
+                      className={`block w-full text-left px-4 py-2 text-sm ${
+                        router.locale === 'fr'
+                          ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/20'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      }`}
+                    >
+                      <span className="mr-2" role="img" aria-label="Français">🇫🇷</span>
+                      Français
+                    </button>
+                  </div>
+                )}
+              </div>
+
               {/* Dark Mode Toggle */}
               <motion.button
                 onClick={toggleDarkMode}
@@ -118,9 +196,9 @@ const PortfolioSite = () => {
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
-                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <Moon className="w-5 h-5 text-white" />
                 ) : (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <Sun className="w-5 h-5 text-yellow-500" />
                 )}
               </motion.button>
             </div>
@@ -157,29 +235,40 @@ const PortfolioSite = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link href="#about">
                 <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  About
+                  {t('nav.about')}
                 </span>
               </Link>
               <Link href="#projects">
                 <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  Projects
+                  {t('nav.projects')}
                 </span>
               </Link>
               <Link href="#skills">
                 <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  Skills
+                  {t('nav.skills')}
                 </span>
               </Link>
               <Link href="/cv">
-                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  CV
+                <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white border-2 border-emerald-500 rounded-full text-center mx-3">
+                  {t('nav.cv')}
                 </span>
               </Link>
               <Link href="#contact">
                 <span className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                  Contact
+                  {t('nav.contact')}
                 </span>
               </Link>
+
+              {/* Mobile Language Toggle */}
+              <div className="px-3 py-2">
+                <button
+                  onClick={() => toggleLanguage(router.locale === 'en' ? 'fr' : 'en')}
+                  className="flex items-center w-full text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <Globe className="w-5 h-5 mr-2" />
+                  <span>{router.locale === 'en' ? 'Français' : 'English'}</span>
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -195,16 +284,107 @@ const PortfolioSite = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center"
+              className="text-center space-y-8"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Need a project manager?
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                You're in the right place.
-              </p>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <motion.div
+                  animate={{ 
+                    background: [
+                      "linear-gradient(to right, #3b82f6, #06b6d4)",
+                      "linear-gradient(to right, #06b6d4, #3b82f6)",
+                      "linear-gradient(to right, #3b82f6, #06b6d4)"
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                  className="absolute inset-0 rounded-lg filter blur-xl opacity-50"
+                />
+                <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 relative">
+                  {t('hero.title')}
+                </h1>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="flex flex-col items-center space-y-6"
+              >
+                <p className="text-xl text-gray-600 dark:text-gray-300">
+                  {t('hero.subtitle')}
+                </p>
+
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400"
+                >
+                  <span className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    {t('hero.skills.digital')}
+                  </span>
+                  <span className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    {t('hero.skills.agile')}
+                  </span>
+                  <span className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    {t('hero.skills.data')}
+                  </span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.5, duration: 0.5 }}
+                  className="flex gap-4"
+                >
+                  <Link 
+                    href="#projects"
+                    className="inline-flex items-center px-6 py-3 border-2 border-sky-500 text-sky-600 dark:text-sky-400 font-semibold rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors duration-300"
+                  >
+                    {t('hero.buttons.work')}
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  <Link 
+                    href="/cv"
+                    className="inline-flex items-center px-6 py-3 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    {t('hero.buttons.cv')}
+                  </Link>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
+
+          {/* Decorative Elements */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            transition={{ delay: 2, duration: 1 }}
+            className="absolute top-1/4 left-10 w-12 h-12 border-2 border-sky-500 rounded-lg hidden md:block"
+            style={{ transform: 'rotate(-15deg)' }}
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ delay: 2.2, duration: 1 }}
+            className="absolute bottom-1/4 right-10 w-8 h-8 border-2 border-blue-500 rounded-full hidden md:block"
+          />
         </section>
 
         {/* About Section */}
@@ -233,19 +413,7 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hey, I'm James – a project manager who loves turning complex challenges into simple solutions. 
-                  Over the past three years, I've managed projects ranging from government digital services to startup 
-                  tech platforms. Most recently, I've been working at <a 
-                    href="https://roamfreely.io" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-sky-600 dark:text-sky-400 hover:underline"
-                  >
-                    Roam
-                  </a>, where I helped build tools that make visa applications less of a headache for travellers.
-                  Before that, I spent two years in London's local government, where I learnt to navigate complex 
-                  stakeholder requirements whilst delivering real impact for communities. I'm PRINCE2 and Agile certified, 
-                  speak fluent French, and have a keen interest in how technology can make processes better for everyone.
+                  {t('about.intro')}
                 </p>
               </motion.div>
             </div>
@@ -255,7 +423,9 @@ const PortfolioSite = () => {
         {/* Projects Section */}
         <section id="projects" className="py-20 dark:bg-gray-900">
           <div className="max-w-[95vw] mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 px-4">Projects</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 px-4">
+              {t('sections.projects')}
+            </h2>
             
             <Marquee className="py-4" pauseOnHover repeat={2}>
               {projects.map((project) => (
@@ -299,10 +469,12 @@ const PortfolioSite = () => {
         {/* Skills Section */}
         <section id="skills" className="py-32 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">Skills & Expertise</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+              {t('sections.skills')}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               
-              {/* Project & Product Management */}
+              {/* Project Leadership */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -314,25 +486,17 @@ const PortfolioSite = () => {
                   <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                     📊
                   </span>
-                  Project Leadership
+                  {t('skills.project.title')}
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">PRINCE2 & Agile Methodologies</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Stakeholder Management</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Risk Management & RAID</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Budget Control</span>
-                  </div>
+                  {[0, 1, 2, 3].map((index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {t(`skills.project.skills.${index}`)}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
 
@@ -348,25 +512,17 @@ const PortfolioSite = () => {
                   <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                     💻
                   </span>
-                  Digital & Tech
+                  {t('skills.tech.title')}
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Python Development</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Next.js & React</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Data Analysis & ML</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">SQL & Database Design</span>
-                  </div>
+                  {[0, 1, 2, 3].map((index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {t(`skills.tech.skills.${index}`)}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
 
@@ -382,28 +538,19 @@ const PortfolioSite = () => {
                   <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                     🎯
                   </span>
-                  Strategy & Research
+                  {t('skills.strategy.title')}
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">User Research & Testing</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Service Design</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Policy Development</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                    <span className="text-gray-700 dark:text-gray-300">Impact Assessment</span>
-                  </div>
+                  {[0, 1, 2, 3].map((index) => (
+                    <div key={index} className="flex items-center">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        {t(`skills.strategy.skills.${index}`)}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
@@ -417,7 +564,9 @@ const PortfolioSite = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">CV</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                {t('sections.cv')}
+              </h2>
               
               <div className="relative">
                 {/* Timeline line */}
@@ -439,22 +588,20 @@ const PortfolioSite = () => {
                           <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                             🚀
                           </span>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Project Manager at Roam</h3>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                            {t('cv.roles.roam.title')}
+                          </h3>
                         </div>
-                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">2022 - Present</p>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">
+                          {t('cv.roles.roam.period')}
+                        </p>
                         <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Led development of automated visa information system
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Managed international expansion across multiple markets
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Developed secure document management platform
-                          </li>
+                          {[0, 1, 2].map((index) => (
+                            <li key={index} className="flex items-center">
+                              <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                              {t(`cv.roles.roam.achievements.${index}`)}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -474,22 +621,20 @@ const PortfolioSite = () => {
                           <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                             🏛️
                           </span>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Graduate Project Manager at Islington Council</h3>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                            {t('cv.roles.islington.title')}
+                          </h3>
                         </div>
-                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">2020 - 2022</p>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">
+                          {t('cv.roles.islington.period')}
+                        </p>
                         <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Led Youth Justice Service transformation
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Managed £100K community research project
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Achieved highest inspection rating in London
-                          </li>
+                          {[0, 1, 2].map((index) => (
+                            <li key={index} className="flex items-center">
+                              <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                              {t(`cv.roles.islington.achievements.${index}`)}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -509,21 +654,17 @@ const PortfolioSite = () => {
                           <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
                             🎓
                           </span>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Education & Certifications</h3>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                            {t('cv.roles.education.title')}
+                          </h3>
                         </div>
                         <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            PRINCE2 Agile Practitioner Certification
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            Data Analysis Bootcamp
-                          </li>
-                          <li className="flex items-center">
-                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
-                            MA Politics & History
-                          </li>
+                          {[0, 1, 2].map((index) => (
+                            <li key={index} className="flex items-center">
+                              <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                              {t(`cv.roles.education.achievements.${index}`)}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -540,12 +681,12 @@ const PortfolioSite = () => {
                 >
                   <Link
                     href="/cv"
-                    className="inline-flex items-center px-6 py-3 border-2 border-sky-500 text-sky-600 dark:text-sky-400 font-semibold rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors duration-300"
+                    className="inline-flex items-center px-6 py-3 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 font-semibold rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors duration-300"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    View Full CV
+                    {t('cv.viewFull')}
                   </Link>
                 </motion.div>
               </div>
@@ -559,7 +700,7 @@ const PortfolioSite = () => {
             <motion.h2 
               className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
             >
-              Get in Touch
+              {t('sections.contact')}
             </motion.h2>
             <div className="flex justify-center space-x-8">
               {/* Gmail Link */}
@@ -572,7 +713,7 @@ const PortfolioSite = () => {
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 rounded-lg p-2"
               >
                 <Mail className="w-6 h-6 mr-2" />
-                <span>Gmail</span>
+                <span>{t('contact.email')}</span>
               </motion.a>
 
               {/* LinkedIn */}
@@ -585,7 +726,7 @@ const PortfolioSite = () => {
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 rounded-lg p-2"
               >
                 <Link2 className="w-6 h-6 mr-2" />
-                <span>LinkedIn</span>
+                <span>{t('contact.linkedin')}</span>
               </motion.a>
 
               {/* GitHub */}
@@ -598,7 +739,7 @@ const PortfolioSite = () => {
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 rounded-lg p-2"
               >
                 <Link2 className="w-6 h-6 mr-2" />
-                <span>GitHub</span>
+                <span>{t('contact.github')}</span>
               </motion.a>
             </div>
           </div>
@@ -608,7 +749,7 @@ const PortfolioSite = () => {
         <footer className="bg-gray-50 dark:bg-gray-900 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-center text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} James Pares. All rights reserved.
+              © {new Date().getFullYear()} James Pares. {t('footer.rights')}
             </p>
           </div>
         </footer>

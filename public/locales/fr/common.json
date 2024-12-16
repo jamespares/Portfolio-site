@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Besoin d'un chef de projet ?",
+    "subtitle": "Vous êtes au bon endroit.",
+    "skills": {
+      "digital": "Transformation Numérique",
+      "agile": "Développement Agile",
+      "data": "Analyse de Données"
+    },
+    "buttons": {
+      "work": "Voir mes projets",
+      "cv": "Voir mon CV"
+    }
+  },
+  "about": {
+    "intro": "Bonjour, je suis James – un chef de projet passionné par la transformation de défis complexes en solutions simples. Au cours des trois dernières années, j'ai géré des projets allant des services numériques gouvernementaux aux plateformes technologiques de startups. Récemment, j'ai travaillé chez Roam, où j'ai contribué à créer des outils qui simplifient les demandes de visa. Avant cela, j'ai passé deux ans dans l'administration locale de Londres, où j'ai appris à gérer les exigences complexes des parties prenantes tout en générant un impact réel pour les communautés. Je suis certifié PRINCE2 et Agile, parle couramment français, et je m'intéresse particulièrement à la façon dont la technologie peut améliorer les processus pour tous."
+  },
+  "sections": {
+    "projects": "Projets",
+    "skills": "Compétences & Expertise",
+    "cv": "CV",
+    "contact": "Me Contacter"
+  },
+  "skills": {
+    "project": {
+      "title": "Direction de Projet",
+      "skills": {
+        "0": "Méthodologies PRINCE2 & Agile",
+        "1": "Gestion des Parties Prenantes",
+        "2": "Gestion des Risques & RAID",
+        "3": "Contrôle Budgétaire"
+      }
+    },
+    "tech": {
+      "title": "Numérique & Tech",
+      "skills": {
+        "0": "Développement Python",
+        "1": "Next.js & React",
+        "2": "Analyse de Données & ML",
+        "3": "SQL & Base de Données"
+      }
+    },
+    "strategy": {
+      "title": "Stratégie & Recherche",
+      "skills": {
+        "0": "Recherche & Tests Utilisateurs",
+        "1": "Conception de Services",
+        "2": "Développement de Politiques",
+        "3": "Évaluation d'Impact"
+      }
+    }
+  },
+  "cv": {
+    "viewFull": "Voir CV Complet",
+    "roles": {
+      "roam": {
+        "title": "Chef de Projet chez Roam",
+        "period": "2022 - Présent",
+        "achievements": {
+          "0": "Direction du développement du système automatisé d'information visa",
+          "1": "Gestion de l'expansion internationale sur plusieurs marchés",
+          "2": "Développement d'une plateforme sécurisée de gestion documentaire"
+        }
+      },
+      "islington": {
+        "title": "Chef de Projet Junior à Islington Council",
+        "period": "2020 - 2022",
+        "achievements": {
+          "0": "Direction de la transformation du Service de Justice pour la Jeunesse",
+          "1": "Gestion d'un projet de recherche communautaire de 100K£",
+          "2": "Obtention de la meilleure note d'inspection à Londres"
+        }
+      },
+      "education": {
+        "title": "Formation & Certifications",
+        "achievements": {
+          "0": "Certification PRINCE2 Agile Practitioner",
+          "1": "Certification Google en Gestion de Projet",
+          "2": "Master en Politique & Histoire"
+        }
+      }
+    }
+  },
+  "contact": {
+    "email": "Gmail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+} 

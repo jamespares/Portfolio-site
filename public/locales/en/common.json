@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Need a project manager?",
+    "subtitle": "You're in the right place.",
+    "skills": {
+      "digital": "Digital Transformation",
+      "agile": "Agile Development",
+      "data": "Data Analysis"
+    },
+    "buttons": {
+      "work": "View My Work",
+      "cv": "View CV"
+    }
+  },
+  "about": {
+    "intro": "Hey, I'm James – a project manager who loves turning complex challenges into simple solutions. Over the past three years, I've managed projects ranging from government digital services to startup tech platforms. Most recently, I've been working at Roam, where I helped build tools that make visa applications less of a headache for travellers. Before that, I spent two years in London's local government, where I learnt to navigate complex stakeholder requirements whilst delivering real impact for communities. I'm PRINCE2 and Agile certified, speak fluent French, and have a keen interest in how technology can make processes better for everyone."
+  },
+  "sections": {
+    "projects": "Projects",
+    "skills": "Skills & Expertise",
+    "cv": "CV",
+    "contact": "Get in Touch"
+  },
+  "skills": {
+    "project": {
+      "title": "Project Leadership",
+      "skills": {
+        "0": "PRINCE2 & Agile Methodologies",
+        "1": "Stakeholder Management",
+        "2": "Risk Management & RAID",
+        "3": "Budget Control"
+      }
+    },
+    "tech": {
+      "title": "Digital & Tech",
+      "skills": {
+        "0": "Python Development",
+        "1": "Next.js & React",
+        "2": "Data Analysis & ML",
+        "3": "SQL & Database Design"
+      }
+    },
+    "strategy": {
+      "title": "Strategy & Research",
+      "skills": {
+        "0": "User Research & Testing",
+        "1": "Service Design",
+        "2": "Policy Development",
+        "3": "Impact Assessment"
+      }
+    }
+  },
+  "cv": {
+    "viewFull": "View Full CV",
+    "roles": {
+      "roam": {
+        "title": "Project Manager at Roam",
+        "period": "2022 - Present",
+        "achievements": {
+          "0": "Led development of automated visa information system",
+          "1": "Managed international expansion across multiple markets",
+          "2": "Developed secure document management platform"
+        }
+      },
+      "islington": {
+        "title": "Graduate Project Manager at Islington Council",
+        "period": "2020 - 2022",
+        "achievements": {
+          "0": "Led Youth Justice Service transformation",
+          "1": "Managed £100K community research project",
+          "2": "Achieved highest inspection rating in London"
+        }
+      },
+      "education": {
+        "title": "Education & Certifications",
+        "achievements": {
+          "0": "PRINCE2 Agile Practitioner Certification",
+          "1": "Google Project Management Certificate",
+          "2": "MA Politics & History"
+        }
+      }
+    }
+  },
+  "contact": {
+    "email": "Gmail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+} 

@@ -1,37 +1,61 @@
-import React, { createContext, useState, ReactNode } from 'react';
-import en from '../translations/en';
-import fr from '../translations/fr';
+import React, { createContext, useContext } from 'react';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 type Language = 'en' | 'fr';
 
-interface LanguageContextProps {
+interface LanguageContextType {
   language: Language;
-  toggleLanguage: () => void;
-  translations: typeof en;
+  setLanguage: (lang: Language) => Promise<void>;
+  getLanguageEmoji: (lang: Language) => string;
+  getLanguageName: (lang: Language) => string;
 }
 
-export const LanguageContext = createContext<LanguageContextProps>({
+const languageEmojis: Record<Language, string> = {
+  en: '🇬🇧',
+  fr: '🇫🇷',
+};
+
+const languageNames: Record<Language, string> = {
+  en: 'English',
+  fr: 'Français',
+};
+
+const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
-  toggleLanguage: () => {},
-  translations: en,
+  setLanguage: async () => {},
+  getLanguageEmoji: () => '🇬🇧',
+  getLanguageName: () => 'English',
 });
 
-interface LanguageProviderProps {
-  children: ReactNode;
-}
-
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-
-  const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === 'en' ? 'fr' : 'en'));
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const { i18n } = useTranslation();
+  
+  const setLanguage = async (lang: Language) => {
+    const { pathname, asPath, query } = router;
+    await router.push({ pathname, query }, asPath, { locale: lang });
   };
 
-  const translations = language === 'en' ? en : fr;
+  const getLanguageEmoji = (lang: Language) => languageEmojis[lang];
+  const getLanguageName = (lang: Language) => languageNames[lang];
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, translations }}>
+    <LanguageContext.Provider value={{ 
+      language: (router.locale || 'en') as Language,
+      setLanguage,
+      getLanguageEmoji,
+      getLanguageName
+    }}>
       {children}
     </LanguageContext.Provider>
   );
-};
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+}

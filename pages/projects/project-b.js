@@ -9,8 +9,6 @@ import 'prismjs/components/prism-typescript';
 import { useEffect } from 'react';
 
 const ProjectB = () => {
-  const { language, toggleLanguage, translations } = useContext(LanguageContext);
-
   useEffect(() => {
     Prism.highlightAll();
   }, []);
