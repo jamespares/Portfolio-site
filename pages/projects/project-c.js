@@ -7,12 +7,17 @@ const ProjectC = () => {
     {
       src: "/images/community-survey.png",
       alt: "Community members participating in the survey",
-      caption: "Engaging with residents completing the survey at a local event."
+      caption: "Meeting residents where they are: conducting surveys at local events."
     },
     {
       src: "/images/islington-gantt.png",
-      alt: "Gantt chart for the project",
-      caption: "Gantt chart illustrating the project's timeline and tasks."
+      alt: "Project timeline and coordination",
+      caption: "Planning and tracking our community outreach efforts."
+    },
+    {
+      src: "/images/islington-data.png",
+      alt: "Data visualization dashboard",
+      caption: "Turning community feedback into actionable insights."
     }
   ];
 
@@ -38,112 +43,100 @@ const ProjectC = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-              London Borough of Islington – Community Research Initiative
+              Giving Voice to Islington's Communities
             </h1>
 
-            <div className="my-8">
-              <div className="w-full aspect-w-16 aspect-h-9">
-                <iframe
-                  src="https://www.youtube.com/embed/hqi2ut09hVA"
-                  title="Project Overview Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full rounded-xl shadow-2xl"
-                ></iframe>
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                Overview of the Community Research Initiative and its impact.
-              </p>
-            </div>
-
             <div className="prose prose-lg max-w-none dark:prose-invert">
-              <h2>Introduction</h2>
+              <h2>The Challenge</h2>
               <p>
-                During my time at the London Borough of Islington, I recognised a pressing need to better understand
-                the diverse needs, concerns, and priorities of our residents. The existing data was outdated and insufficient
-                for informed policy-making and effective allocation of resources. Determined to bridge this gap, I initiated
-                a comprehensive community research project to gather actionable insights, improve public services, and
-                strengthen community relations.
+                Whilst working with the London Borough of Islington, we identified a critical gap in our 
+                understanding of youth services. Despite having excellent programmes, we lacked insight into 
+                what young people really needed and how they experienced our services. With a £100,000 
+                research budget, we set out to revolutionise our approach to youth engagement.
               </p>
 
               <div className="my-8">
                 <img
-                  src="/images/community-survey.png"
-                  alt="Community members participating in the survey"
+                  src={images[0].src}
+                  alt={images[0].alt}
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  Engaging with residents completing the survey at a local event.
+                  {images[0].caption}
                 </p>
               </div>
 
-              <h2>Action</h2>
-              <h3>Designing and Leading a Large-Scale Research Initiative</h3>
-
-              <h4>Project Planning and Securing Buy-In</h4>
+              <h2>The Solution</h2>
               <p>
-                I began by developing a detailed project proposal outlining the objectives, methodologies, timelines, and budget requirements. To secure buy-in from senior leadership and key stakeholders, I presented a compelling case emphasising the potential impact on community welfare and efficient resource allocation.
+                We developed a comprehensive research programme that prioritised young people's voices:
               </p>
 
-              <h4>Survey Development and Methodology</h4>
+              <h3>Meeting People Where They Are</h3>
               <p>
-                To ensure we gathered comprehensive data, I designed a survey instrument covering topics such as housing, healthcare, education, and social services. I conducted pilot testing with 100 residents to refine the questions and improve clarity. Utilising <strong>Qualtrics</strong>, I created and distributed the online survey.
-              </p>
-
-              <h4>Multi-Channel Data Collection and Stakeholder Coordination</h4>
-              <p>
-                Recognising the importance of reaching a diverse audience, I coordinated with various departments and community organisations to deploy online surveys via council platforms and social media channels. I organised physical distribution through public facilities and community events. To engage with non-English speaking residents, I collaborated with translation services and hosted focus groups in multiple languages.
+                Instead of expecting residents to come to us, we went to them. We set up at community 
+                events, local markets, and neighborhood centers. We created surveys in multiple languages 
+                and worked with community leaders to reach groups we'd struggled to hear from before. 
+                Most importantly, we made it clear that we weren't just collecting data – we were 
+                listening to build better services.
               </p>
 
               <div className="my-8">
                 <img
-                  src="/images/islington-gantt.png"
-                  alt="Gantt chart for the project"
+                  src={images[1].src}
+                  alt={images[1].alt}
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  Gantt chart illustrating the project's timeline and tasks.
+                  {images[1].caption}
                 </p>
               </div>
 
-              <h2>Impact</h2>
-
-              <h3>Data-Driven Decision Making</h3>
+              <h3>Turning Feedback into Action</h3>
               <p>
-                The research findings enabled us to develop 15 new policy initiatives addressing key community issues. We successfully redirected over £2 million in budget funds to under-resourced areas. The implementation of new programmes based on the research improved services in housing, healthcare, and education.
+                We didn't want this to be just another survey that gathered dust. Using data analysis 
+                tools, we transformed thousands of responses into clear insights about what different 
+                communities needed. We created visual reports that made it easy for decision-makers to 
+                understand where services were working well and where they needed improvement.
               </p>
 
-              <h3>Enhanced Stakeholder Relations</h3>
+              <div className="my-8">
+                <img
+                  src={images[2].src}
+                  alt={images[2].alt}
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  {images[2].caption}
+                </p>
+              </div>
+
+              <h2>The Impact</h2>
               <p>
-                By involving multiple stakeholders throughout the project, we strengthened relationships within the council and with external partners. This collaborative approach led to a 40% increase in community participation in council initiatives. Residents reported higher levels of satisfaction and trust in local government.
+                The results transformed how Islington Council works with its communities:
+              </p>
+              <ul>
+                <li>We redirected £100K to services that residents said they needed most</li>
+                <li>Community participation in council initiatives increased by 40%</li>
+                <li>We launched 15 new programs based directly on community feedback</li>
+                <li>Resident satisfaction with council services significantly improved</li>
+              </ul>
+
+              <h2>What I Learnt</h2>
+              <p>
+                This project transformed my understanding of community research. I learnt that meaningful 
+                insights come from creating spaces where people feel truly heard. The skills I developed in 
+                managing large-scale research, analysing complex data, and translating findings into 
+                actionable recommendations have become central to my approach to problem-solving.
               </p>
 
-              <h2>Skills Gained and Business Relevance</h2>
-
-              <h3>Strategic Project Management</h3>
-              <p>
-                Leading a cross-functional team of 12 members, I honed my ability to coordinate efforts across departments and with external partners. Applying <strong>Agile methodologies</strong> allowed for project adaptation and efficient workflow management, skills that are directly transferable to managing complex projects in the private sector.
-              </p>
-
-              <h3>Stakeholder Engagement and Buy-In</h3>
-              <p>
-                Securing buy-in from senior leadership and key stakeholders was critical to the project's success. I developed persuasive communication strategies to align diverse interests and priorities, a competency essential for driving initiatives within businesses and ensuring support from decision-makers.
-              </p>
-
-              <h3>Data Analytics and Insight Generation</h3>
-              <p>
-                I enhanced my skills in advanced statistical analysis using <strong>Python</strong>, <strong>R</strong>, and <strong>SPSS</strong>. Utilising data visualisation tools like <strong>Power BI</strong> and <strong>Tableau</strong>, I transformed complex data into actionable insights. These abilities are crucial in the private sector for making informed business decisions and developing strategies based on data.
-              </p>
-
-              <h3>Effective Communication and Collaboration</h3>
-              <p>
-                Managing complex stakeholder relationships required clear and effective communication. I facilitated collaboration between departments and external organisations, ensuring alignment with project goals. This experience is valuable in any business environment where cross-functional teamwork and stakeholder management are key to success.
-              </p>
-
-              <h2>Lessons Learned</h2>
-              <p>
-                I learned that effective engagement requires multi-channel approaches to reach a diverse audience, whether customers, clients, or internal teams. Continuous feedback loops enhance the relevance and impact of initiatives, leading to better outcomes. Collaborative efforts across departments and with external partners result in more comprehensive and sustainable solutions, a principle that holds true in the private sector for driving innovation and achieving business objectives.
-              </p>
+              <h3>Key Skills Used</h3>
+              <ul>
+                <li>Project management and stakeholder coordination</li>
+                <li>Data analysis and visualization (Python, Power BI)</li>
+                <li>Community engagement and facilitation</li>
+                <li>Strategic planning and resource allocation</li>
+                <li>Cross-cultural communication</li>
+              </ul>
             </div>
           </motion.div>
         </div>

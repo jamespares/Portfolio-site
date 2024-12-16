@@ -35,36 +35,36 @@ const PortfolioSite = () => {
   const projects = [
     {
       id: "project-a",
-      title: "Roam – AI-Powered Data Automation",
-      description: "Led development of AI-powered data automation system, improving accuracy by 25% and reducing manual work by 85%",
+      title: "Roam – Data Automation Project",
+      description: "Built and managed an automated data collection system that transformed how we gather visa information, making our service faster and more reliable for users worldwide.",
       tags: ["Python", "AI/ML", "Data Pipeline", "DevOps"],
       image: "/images/roam.png"
     },
     {
       id: "project-b",
-      title: "Roam – Internationalisation & SEO",
-      description: "Led website internationalisation initiative resulting in 50% growth in international traffic and 30% increase in user engagement",
+      title: "Roam – Global Expansion",
+      description: "Led Roam's international growth by adapting our platform for global audiences, significantly boosting our reach and user engagement across multiple markets.",
       tags: ["Next.js", "SEO", "Node.js", "i18n"],
       image: "/images/roam.png"
     },
     {
       id: "project-c",
-      title: "London Borough of Islington – Community Research",
-      description: "Led borough's largest community research initiative, redirecting £2M in resources and achieving 40% increase in community engagement",
+      title: "Islington Council – Community Research",
+      description: "Led Islington's most extensive community research project, helping redirect £100K in funding to where it was needed most and bringing more residents into the conversation.",
       tags: ["Data Analytics", "Python", "Policy", "Research"],
       image: "/images/islington.png"
     },
     {
       id: "project-d",
-      title: "London Borough of Islington – Youth Justice Service",
-      description: "Led compliance overhaul resulting in 'Outstanding' HMIP rating (34/36) - best in London and third-highest nationally",
-      tags: ["Compliance", "Change Management", "Innovation", "Service Design"],
+      title: "Islington Council – Youth Justice",
+      description: "Transformed the Youth Justice Service's operations, helping achieve London's highest inspection rating and setting new standards for youth support services.",
+      tags: ["Service Design", "Innovation", "Policy"],
       image: "/images/islington.png"
     },
     {
       id: "project-e",
-      title: "Roam - Visa Application Flow",
-      description: "Built end-to-end visa application flow using TypeScript, Next.js, React, Supabase, and Stripe API, improving conversion rates",
+      title: "Roam - Visa Applications",
+      description: "Designed and built a streamlined visa application system that makes the complex process of applying for visas simpler and more user-friendly.",
       tags: ["TypeScript", "Next.js", "Supabase", "Stripe"],
       image: "/images/roam.png"
     }
@@ -233,18 +233,19 @@ const PortfolioSite = () => {
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Hi there. My name is James. I'm a young professional currently seeking a project management role.
-                  I have two years of experience managing projects in city government, in London, and one year managing projects at a 
-                  technology start-up, <a 
+                  Hey, I'm James – a project manager who loves turning complex challenges into simple solutions. 
+                  Over the past three years, I've managed projects ranging from government digital services to startup 
+                  tech platforms. Most recently, I've been working at <a 
                     href="https://roamfreely.io" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-sky-600 dark:text-sky-400 hover:underline"
                   >
                     Roam
-                  </a>. I have experience with Agile and Waterfall project management methodologies, including PRINCE2 and Agile certification. I also have exposure to web development, software development,
-                  data analysis, and data visualisation. And I speak French fluently.
-                  Please see my CV above, and examples of my work below.
+                  </a>, where I helped build tools that make visa applications less of a headache for travellers.
+                  Before that, I spent two years in London's local government, where I learnt to navigate complex 
+                  stakeholder requirements whilst delivering real impact for communities. I'm PRINCE2 and Agile certified, 
+                  speak fluent French, and have a keen interest in how technology can make processes better for everyone.
                 </p>
               </motion.div>
             </div>
@@ -298,111 +299,257 @@ const PortfolioSite = () => {
         {/* Skills Section */}
         <section id="skills" className="py-32 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Skills & Expertise</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">Skills & Expertise</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div 
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
+              
+              {/* Project & Product Management */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Product Management</h3>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Strategy & Discovery:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Product-Market Fit Analysis</li>
-                      <li>• User Personas & Journey Mapping</li>
-                      <li>• Competitive Analysis</li>
-                    </ul>
-                  </li>
-                  <li>Design & Development:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Figma </li>
-                      <li>• Wireframing & Prototyping</li>
-                      <li>• A/B Testing </li>
-                    </ul>
-                  </li>
-                  <li>Product Analytics:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Google Analytics </li>
-                      <li>• Simple Analytics</li>
-                    </ul>
-                  </li>
-                  <li>Documentation & Planning:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Product/User Requirements (PRDs)</li>
-                      <li>• Google Docs & Sheets</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div 
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                  <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                    📊
+                  </span>
+                  Project Leadership
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">PRINCE2 & Agile Methodologies</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Stakeholder Management</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Risk Management & RAID</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Budget Control</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Digital & Tech */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Management</h3>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Methodologies & Frameworks:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Agile (Scrum & Kanban)</li>
-                      <li>• Waterfall & Hybrid</li>
-                      <li>• PRINCE2 Practitioner </li>
-                    </ul>
-                  </li>
-                  <li>Project Planning Tools:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Jira </li>
-                      <li>• MS Project & Gantt Charts</li>
-                      <li>• Mermaid/D2 Diagramming</li>
-                    </ul>
-                  </li>
-                  <li>Collaboration Tools:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Trello </li>
-                      <li>• Google Workspace </li>
-                      <li>• Slack, MS Teams, WhatsApp </li>
-                    </ul>
-                  </li>
-                  <li>Documentation & Tracking:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Risk Registers & RAID Logs</li>
-                      <li>• Stakeholder Mapping </li>
-                      <li>• Budget Tracking </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div 
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                  <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                    💻
+                  </span>
+                  Digital & Tech
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Python Development</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Next.js & React</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Data Analysis & ML</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">SQL & Database Design</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Strategy & Research */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Data Analysis</h3>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Python Data Processing:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Pandas & NumPy</li>
-                      <li>• SciPy & Statsmodels</li>
-                    </ul>
-                  </li>
-                  <li>Machine Learning:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Scikit-learn (Classification, Regression)</li>
-                      <li>• Supervised Learning (Random Forest, XGBoost)</li>
-                      <li>• Unsupervised Learning (K-means)</li>
-                    </ul>
-                  </li>
-                  <li>Data Visualisation:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Matplotlib & Seaborn</li>
-                      <li>• Plotly, Dash, Streamlit, Highcharts</li>
-                      <li>• Tableau & Power BI</li>
-                    </ul>
-                  </li>
-                  <li>Business Tools:
-                    <ul className="ml-4 mt-1 space-y-1 text-gray-600 dark:text-gray-400">
-                      <li>• Excel (Advanced Functions, Pivot Tables)</li>
-                      <li>• Google Sheets </li>
-                      <li>• SQL & Database Management</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+                  <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                    🎯
+                  </span>
+                  Strategy & Research
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">User Research & Testing</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Service Design</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Policy Development</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                    <span className="text-gray-700 dark:text-gray-300">Impact Assessment</span>
+                  </div>
+                </div>
+              </motion.div>
+
             </div>
+          </div>
+        </section>
+
+        {/* CV Section */}
+        <section id="cv" className="py-32 bg-white dark:bg-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">CV</h2>
+              
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-[calc(100%-8rem)] w-0.5 bg-sky-500"></div>
+
+                {/* Experience Items */}
+                <div className="space-y-12 mb-24">
+                  {/* Roam */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex items-center md:justify-between md:odd:flex-row-reverse group"
+                  >
+                    <div className="flex items-center md:w-5/12 md:odd:justify-start md:even:justify-end">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-sky-500 w-full hover:shadow-xl transition-shadow duration-300">
+                        <div className="flex items-center mb-4">
+                          <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                            🚀
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Project Manager at Roam</h3>
+                        </div>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">2022 - Present</p>
+                        <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Led development of automated visa information system
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Managed international expansion across multiple markets
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Developed secure document management platform
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Islington Council */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex items-center md:justify-between group"
+                  >
+                    <div className="flex items-center md:w-5/12 md:odd:justify-start md:even:justify-end">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-sky-500 w-full hover:shadow-xl transition-shadow duration-300">
+                        <div className="flex items-center mb-4">
+                          <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                            🏛️
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Graduate Project Manager at Islington Council</h3>
+                        </div>
+                        <p className="text-sm text-sky-600 dark:text-sky-400 mb-2">2020 - 2022</p>
+                        <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Led Youth Justice Service transformation
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Managed £100K community research project
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Achieved highest inspection rating in London
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Education */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex items-center md:justify-between md:odd:flex-row-reverse group"
+                  >
+                    <div className="flex items-center md:w-5/12 md:odd:justify-start md:even:justify-end">
+                      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-sky-500 w-full hover:shadow-xl transition-shadow duration-300">
+                        <div className="flex items-center mb-4">
+                          <span className="w-8 h-8 bg-sky-100 dark:bg-sky-900 rounded-lg flex items-center justify-center mr-3">
+                            🎓
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Education & Certifications</h3>
+                        </div>
+                        <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            PRINCE2 Agile Practitioner Certification
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            Data Analysis Bootcamp
+                          </li>
+                          <li className="flex items-center">
+                            <span className="w-2 h-2 bg-sky-500 rounded-full mr-2"></span>
+                            MA Politics & History
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* View Full CV Button */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative mt-16 flex justify-center"
+                >
+                  <Link
+                    href="/cv"
+                    className="inline-flex items-center px-6 py-3 border-2 border-sky-500 text-sky-600 dark:text-sky-400 font-semibold rounded-lg hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    View Full CV
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </section>
 

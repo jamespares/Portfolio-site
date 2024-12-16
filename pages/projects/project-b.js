@@ -19,13 +19,18 @@ const ProjectB = () => {
     {
       src: "/images/roam-lang-dropdown.png",
       alt: "Language selection dropdown interface",
-      caption: "Custom language selector with region-specific options and flags."
+      caption: "Making Roam accessible in multiple languages with an intuitive language selector."
     },
     {
       src: "/images/roam-translated.png",
       alt: "Roam website showing translated content in multiple languages",
-      caption: "Seamless content translation across different locales."
+      caption: "The same visa information, now available in different languages."
     },
+    {
+      src: "/images/roam-code.png",
+      alt: "Code showing the translation system implementation",
+      caption: "Our automated translation system in action."
+    }
   ];
 
   return (
@@ -50,30 +55,17 @@ const ProjectB = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-              Internationalisation Project at Roam.io
+              Taking Roam Global
             </h1>
 
             <div className="prose prose-lg max-w-none dark:prose-invert">
+              <h2>The Challenge</h2>
               <p>
-                At <a href="https://roamfreely.io" target="_blank" rel="noopener noreferrer">Roam.io</a>, 
-                I led the development of a comprehensive internationalisation solution. I analysed our user data 
-                and identified that a significant portion of our visa application platform's traffic came from 
-                non-English speaking countries. Based on this insight, I implemented a strategic localisation 
-                initiative to expand our market reach.
+                While Roam was helping travelers with visa applications, we noticed something important: many of our 
+                visitors weren't native English speakers. Our analytics showed that people from all over the world 
+                were trying to use our platform, but the language barrier was getting in their way. We needed to 
+                make Roam truly accessible to everyone, regardless of what language they spoke.
               </p>
-
-              <h2>Technical Implementation</h2>
-              <p>
-                I developed a custom internationalisation architecture using Next.js Static Site Generation 
-                and a Node.js-based translation management system. My key technical implementations included:
-              </p>
-
-              <ul>
-                <li>I built static page generation for multiple languages using Next.js SSG</li>
-                <li>I created an automated translation pipeline using OpenAI GPT-4 API</li>
-                <li>I designed a modular routing system for language-specific content delivery</li>
-                <li>I implemented comprehensive SEO optimisations including hreflang tags</li>
-              </ul>
 
               <div className="my-8">
                 <img
@@ -86,17 +78,15 @@ const ProjectB = () => {
                 </p>
               </div>
 
-              <h2>Core Features</h2>
-              <p>
-                I focused on developing essential features to ensure scalability and performance:
-              </p>
+              <h2>The Solution</h2>
 
-              <ul>
-                <li>I engineered an automated content extraction and translation workflow</li>
-                <li>I implemented language-specific routing and content management</li>
-                <li>I optimised performance for global CDN delivery</li>
-                <li>I developed SEO-optimised static page generation</li>
-              </ul>
+              <h3>Building a Smart Translation System</h3>
+              <p>
+                Instead of just translating our website manually (which would have taken forever), we built a 
+                smart system that could handle translations automatically. We used AI to help translate content 
+                accurately, but always had human experts review the important stuff to make sure everything made 
+                perfect sense.
+              </p>
 
               <div className="my-8">
                 <img
@@ -109,77 +99,63 @@ const ProjectB = () => {
                 </p>
               </div>
 
-              <h2>Translation System Architecture</h2>
+              <h3>Making it Fast and Reliable</h3>
               <p>
-                I developed a custom translation system to automate and streamline the localisation process:
+                We didn't want our international users to have a slower experience, so we built the system to 
+                be lightning-fast. We used Next.js to generate static pages in each language, which meant the 
+                website loaded quickly no matter where in the world you were accessing it from. We also made 
+                sure search engines could easily find our content in every language.
               </p>
 
               <div className="my-8">
                 <pre className="bg-gray-800 text-gray-100 p-6 rounded-lg overflow-x-auto shadow-lg">
                   <code className="language-typescript text-sm">
-{`// translation-script.ts
-import OpenAI from 'openai';
-import * as fs from 'fs/promises';
-import * as path from 'path';
-import * as dotenv from 'dotenv';
-import { Translations } from '../app/types/translations';
-import enTranslations from '../app/text-translations/en';
-
-dotenv.config({ path: '.env.local' });
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
-
-const languages = {
-  ar: 'Arabic',
-  de: 'German',
-  es: 'Spanish',
-  fr: 'French',
-  // Add other languages as needed
-} as const;
-
-async function translateText(text: string, targetLanguage: string) {
-  try {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{
-        role: "user",
-        content: \`Translate this text to \${targetLanguage}, maintaining the same tone and meaning:\\n\\n\${text}\`
-      }]
-    });
-    return response.choices[0]?.message?.content || text;
-  } catch (error) {
-    console.error(\`Translation error for \${targetLanguage}:\`, error);
-    return text;
+{`// Example of our translation automation
+async function translateContent(text: string, language: string) {
+  // First, use AI to generate a translation
+  const aiTranslation = await translateWithAI(text, language);
+  
+  // Then, send for human review if it's important content
+  if (isKeyContent(text)) {
+    return await sendForHumanReview(aiTranslation);
   }
+  
+  return aiTranslation;
 }`}
                   </code>
                 </pre>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                  Translation automation system I developed using OpenAI's GPT-4 API
+                  A glimpse at how we handle automated translations while ensuring accuracy.
                 </p>
               </div>
 
-              <h2>Results</h2>
+              <h2>The Impact</h2>
               <p>
-                Through these implementations, I achieved significant improvements:
+                The results were amazing. Within months of launching our multilingual platform:
               </p>
-
               <ul>
-                <li>I increased international market penetration by 50%</li>
-                <li>I reduced bounce rates for non-English users by 45%</li>
-                <li>I improved conversion rates across new markets by 30%</li>
-                <li>I maintained sub-2-second load times globally</li>
+                <li>More people from non-English speaking countries started using Roam</li>
+                <li>Users spent more time on the site because they could understand everything clearly</li>
+                <li>We started getting great feedback from international travelers</li>
+                <li>The website stayed fast and reliable, even with all the added languages</li>
               </ul>
 
-              <h2>Technical Outcomes</h2>
+              <h2>What I Learnt</h2>
               <p>
-                I established a scalable foundation for Roam's international expansion through automated 
-                workflows and optimised performance. My implementation continues to support the platform's 
-                growth with minimal maintenance requirements, while enabling easy addition of new languages 
-                and features.
+                This project taught me invaluable lessons about leading digital transformation in the public sector. 
+                I learnt how to balance innovation with security, how to bring stakeholders along on a journey of 
+                change, and how to deliver complex technical solutions whilst keeping the focus on improving 
+                people's lives.
               </p>
+
+              <h3>Key Skills Used</h3>
+              <ul>
+                <li>International market research and strategy</li>
+                <li>Next.js and React development</li>
+                <li>AI integration for translations</li>
+                <li>Performance optimization</li>
+                <li>SEO for international markets</li>
+              </ul>
             </div>
           </motion.div>
         </div>

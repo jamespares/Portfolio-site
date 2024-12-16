@@ -2,11 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --paper: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --radius: 0.5rem;
+    --grid-color: 0 0% 0%;
+    --grid-opacity: 0.02;
+  }
+ 
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --paper: 20 14.3% 4.1%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --border: 217.2 32.6% 17.5%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --grid-color: 0 0% 100%;
+    --grid-opacity: 0.01;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-24;
+  }
+
+  .card {
+    @apply rounded-lg border bg-card p-6 shadow-sm transition-all hover:shadow-md;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary
+    disabled:pointer-events-none disabled:opacity-50
+    h-10 px-4 py-2;
+  }
+
+  .button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .heading {
+    @apply scroll-m-20 tracking-tight;
+  }
+
+  .heading-hero {
+    @apply text-4xl font-bold lg:text-6xl;
+  }
+
+  .heading-section {
+    @apply text-3xl font-semibold lg:text-4xl;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Code highlighting styles */
+body {
+  background: 
+    radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.03), transparent 25%),
+    linear-gradient(to right, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 60% 60%, 24px 24px, 24px 24px;
+  background-position: center center, center center, center center;
+  @apply bg-paper;
+}
+
+.dark body {
+  background: 
+    radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.05), transparent 25%),
+    linear-gradient(to right, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 60% 60%, 24px 24px, 24px 24px;
+}
+
+/* Preserve existing code highlighting styles */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -82,41 +191,41 @@ html {
   cursor: help;
 } 
 
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+/* Preserve existing utility classes */
 .hide-scrollbar {
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
-}
-
-.animate-marquee {
-  animation: marquee var(--duration) linear infinite;
-}
-
-:root {
-  --grid-opacity: 1;
-}
-
-.dark {
-  --grid-opacity: 0.1;
+  display: none;
 }
 
 .scrollbar-hide {
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none;
 }

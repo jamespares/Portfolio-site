@@ -9,22 +9,22 @@ const ProjectA = () => {
     {
       src: "/images/roam-architecture.png",
       alt: "System architecture diagram showing data pipeline flow",
-      caption: "High-level architecture diagram of the Roam data processing pipeline."
+      caption: "A visual overview of how we collect and process visa information."
     },
     {
       src: "/images/roam-terminal.png",
       alt: "Terminal output showing the scraping process with progress bar and error handling",
-      caption: "Terminal output showing the scraping process with progress bar and error handling."
+      caption: "Our data collection tool in action, showing real-time progress and error checks."
     },
     {
       src: "/images/roam-dashboard.png",
       alt: "Project plan showing the stages of the data pipeline build",
-      caption: "Project plan showing the stages of the data pipeline build."
+      caption: "Breaking down the project into manageable phases."
     },
     {
       src: "/images/roam-sheet.png",
       alt: "Data in the Google Sheet showing the coverage of visa information across countries",
-      caption: "Data in the Google Sheet showing the coverage of visa information across countries."
+      caption: "Tracking our progress: visa information coverage across different countries."
     }
   ];
 
@@ -50,16 +50,16 @@ const ProjectA = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-              AI-Powered Data Scraping and Pipeline Setup
+              Making Visa Information Accessible
             </h1>
 
             <div className="prose prose-lg max-w-none dark:prose-invert">
-              <h2>Introduction</h2>
+              <h2>The Challenge</h2>
               <p>
-                Working at Roam, an innovative visa application platform for tourists, students, and digital nomads,
-                I faced a critical challenge: aggregating comprehensive and accurate visa information from
-                numerous sources worldwide. Recognising the need to automate data collection and ensure the
-                highest level of data accuracy, I set out to develop a solution that would better serve our users.
+                At Roam, we help people navigate the complex world of visa applications. One of our biggest challenges 
+                was getting accurate, up-to-date visa information from hundreds of different sources. With visa rules 
+                changing frequently across 195+ countries, manual research wasn't cutting it anymore. We needed a 
+                better way to keep our users informed.
               </p>
 
               <div className="my-8">
@@ -69,15 +69,17 @@ const ProjectA = () => {
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 mt-2">
-                  High-level architecture diagram of the Roam data processing pipeline.
+                  A visual overview of how we collect and process visa information.
                 </p>
               </div>
 
-              <h2>Action</h2>
+              <h2>The Solution</h2>
 
-              <h3>Developing the Web Scraping Tool</h3>
+              <h3>Building Smart Data Collection</h3>
               <p>
-                To address the challenge, I developed a Python-based web scraping tool using libraries like Scrapy, BeautifulSoup, and Selenium. This tool was designed to collect visa-related data from over 195 country websites and government portals, automating what was previously a manual and time-consuming process.
+                I led the development of a custom tool that automatically gathers visa information from government 
+                websites worldwide. Think of it as a smart assistant that works 24/7, constantly checking and updating 
+                visa requirements so our team doesn't have to do it manually.
               </p>
 
               <div className="my-8">
@@ -87,18 +89,16 @@ const ProjectA = () => {
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 mt-2">
-                  Terminal output showing the scraping process with progress bar and error handling.
+                  Our data collection tool in action, showing real-time progress and error checks.
                 </p>
               </div>
 
-              <h3>Cleaning and Processing Data</h3>
+              <h3>Making Sense of the Data</h3>
               <p>
-                After scraping the data, I utilised Pandas and NumPy to clean and process the collected information. This involved standardising data formats, handling missing values, and ensuring consistency across all data sources. By implementing robust data cleaning procedures, I ensured the integrity and reliability of the dataset.
-              </p>
-
-              <h3>Inputting Data into the Database</h3>
-              <p>
-                With the data cleaned and processed, I stored it in a PostgreSQL database hosted on Supabase. This setup allowed for efficient data storage and retrieval, enabling the platform to serve users with up-to-date visa information quickly.
+                Raw data isn't very useful if it's messy or inconsistent. We built a system that cleans and 
+                organizes the information as it comes in, making sure everything is standardized and easy to 
+                understand. When we found gaps in the data, we used AI to help fill them in, always making sure 
+                to verify the accuracy.
               </p>
 
               <div className="my-8">
@@ -108,29 +108,25 @@ const ProjectA = () => {
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 mt-2">
-                  Project plan showing the stages of the data pipeline build.
+                  Breaking down the project into manageable phases.
                 </p>
               </div>
 
-              <h3>Utilising AI for Data Completion</h3>
+              <h3>Keeping Everything Up to Date</h3>
               <p>
-                To fill any gaps in the collected data, I integrated the Anthropic API, which provided AI capabilities to enhance data accuracy. I implemented confidence scoring to assess the reliability of AI-provided data and made sure that any AI-generated estimates were clearly labelled for transparency.
-              </p>  
-              
-              <h3>Automating Data Refresh with Scheduled Intervals</h3>
-              <p>
-                To keep the data current, I built an automated data pipeline using Apache Airflow. This workflow automation ensured that the scraping and data processing tasks were executed at scheduled intervals, refreshing the database with the latest information without manual intervention.
-              </p>
-              <h3>Establishing DevOps Practices</h3>
-              <p>
-                To support continuous integration and deployment, I set up CI/CD pipelines using GitHub Actions. I also utilised Docker for containerisation, ensuring consistent development and production environments. Version control and collaborative development were managed using Git and GitHub, facilitating seamless teamwork.
+                Visa rules change often, so we set up an automated system that regularly checks for updates. 
+                This means our users always have access to the latest information without our team having to 
+                manually check hundreds of websites every day.
               </p>
 
-              <h2>Impact</h2>
+              <h2>The Impact</h2>
 
-              <h3>Data Enhancement</h3>
+              <h3>Better Information, Happier Users</h3>
               <p>
-                By implementing this solution, I populated over 42,000 rows of accurate and up-to-date visa information, covering regulations from more than 195 countries. The dataset's completeness was significantly enhanced while maintaining high confidence in data accuracy. I also improved data retrieval speed by 40% through optimised database indexing and query performance tuning.
+                This project transformed how we handle visa information at Roam. We now maintain accurate data 
+                for over 195 countries, and our users can trust that they're getting up-to-date information. 
+                The automated system saves our team countless hours of manual work, letting them focus on helping 
+                users with more complex queries.
               </p>
 
               <div className="my-8">
@@ -140,36 +136,27 @@ const ProjectA = () => {
                   className="w-full rounded-lg shadow-lg"
                 />
                 <p className="text-sm text-gray-600 mt-2">
-                  Data in the Google Sheet showing the coverage of visa information across countries.
+                  Tracking our progress: visa information coverage across different countries.
                 </p>
               </div>
 
-              <h3>Operational Efficiency</h3>
+              <h2>What I Learnt</h2>
               <p>
-                The automated pipeline reduced manual data entry tasks by 85%, allowing the team to reallocate hours to other critical functions. Enhanced data accuracy and consistency led to a 25% decrease in user-reported errors and enquiries.
+                This project taught me invaluable lessons about leading digital transformation in the public sector. 
+                I learnt how to balance innovation with security, how to bring stakeholders along on a journey of 
+                change, and how to deliver complex technical solutions whilst keeping the focus on improving 
+                people's lives.
               </p>
 
-              <h3>User Satisfaction</h3>
-              <p>
-                Providing users with comprehensive and reliable visa information improved the overall user experience and increased trust in the platform.
-              </p>
-
-              <h2>Skills Gained</h2>
-
-              <h3>Project Management</h3>
-              <p>
-                I honed my project management skills by leading a complex technical project using Agile methodologies, including sprint planning and daily stand-ups with tools like Jira.
-              </p>
-
-              <h3>Technical Proficiency</h3>
-              <p>
-                I developed advanced expertise in Python programming and web scraping with Scrapy, BeautifulSoup, and Selenium. Integrating AI APIs for data augmentation and completion expanded my skill set. Additionally, I gained experience in data pipeline architecture with Apache Airflow and database management with PostgreSQL and Supabase.
-              </p>
-
-              <h2>Lessons Learned</h2>
-              <p>
-                Through this project, I learned that integrating AI technologies enhances data completeness and accuracy but requires careful validation. Automating data pipelines increases efficiency and allows focus on strategic tasks, but it is critical to ensure data is accurate and operations are precise to avoid compounding errors.
-              </p>
+              <h3>Key Skills Used</h3>
+              <ul>
+                <li>Digital transformation strategy</li>
+                <li>Stakeholder management</li>
+                <li>Agile project delivery</li>
+                <li>User-centred design</li>
+                <li>Technical architecture</li>
+                <li>Information security and GDPR compliance</li>
+              </ul>
             </div>
           </motion.div>
         </div>
