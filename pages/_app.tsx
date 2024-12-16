@@ -9,29 +9,25 @@ function MyApp({ Component, pageProps }: AppProps) {
     <LanguageProvider>
       <>
         <Script
-          id="gtm-script"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PH1EW8CEX1"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-N3H2SQ2Z');`
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PH1EW8CEX1');
+            `
           }}
         />
         <Component {...pageProps} />
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <Script 
-              src="https://scripts.simpleanalyticscdn.com/latest.js"
-              data-skip-dnt="true"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
       </>
     </LanguageProvider>
-  )
+  );
 }
 
 export default appWithTranslation(MyApp);
